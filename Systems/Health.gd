@@ -19,6 +19,6 @@ func die() -> void:
 	get_parent().die()
 	
 func _process(_delta: float) -> void:
-	$HealthBar.scale.x = float(health) / float(max_health)
+	$HealthBar.scale.x = max(0, float(health) / float(max_health))
 	if health != max_health:
 		$HealthBar.visible = true

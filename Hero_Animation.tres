@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=44 format=2]
+[gd_resource type="SpriteFrames" load_steps=43 format=2]
 
 [ext_resource path="res://assets/Art/Hero/hero_Camp-44.png" type="Texture" id=1]
 [ext_resource path="res://assets/Art/Hero/hero_Camp-46.png" type="Texture" id=2]
@@ -25,7 +25,6 @@
 [ext_resource path="res://assets/Art/Hero/hero_Attack-29.png" type="Texture" id=23]
 [ext_resource path="res://assets/Art/Hero/hero_Death-19.png" type="Texture" id=24]
 [ext_resource path="res://assets/Art/Hero/hero_Death-20.png" type="Texture" id=25]
-[ext_resource path="res://assets/Art/Hero/hero_Attack-27.png" type="Texture" id=26]
 [ext_resource path="res://assets/Art/Hero/hero_Death-23.png" type="Texture" id=27]
 [ext_resource path="res://assets/Art/Hero/hero_Drink-32.png" type="Texture" id=28]
 [ext_resource path="res://assets/Art/Hero/hero_Death-17.png" type="Texture" id=29]
@@ -51,9 +50,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 36 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 32 ), ExtResource( 15 ), ExtResource( 33 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 23 ) ],
 "loop": false,
-"name": "drink",
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "camp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 46 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 47 ) ],
@@ -61,23 +65,18 @@ animations = [ {
 "name": "damage",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 36 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 32 ), ExtResource( 15 ), ExtResource( 33 ) ],
+"loop": false,
+"name": "drink",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 41 ), ExtResource( 37 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "run",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 8 ), ExtResource( 26 ), ExtResource( 9 ), ExtResource( 23 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 26 ), ExtResource( 23 ) ],
-"loop": false,
-"name": "attack",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 29 ), ExtResource( 10 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 21 ) ],
 "loop": false,
 "name": "die",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "camp",
 "speed": 5.0
 } ]

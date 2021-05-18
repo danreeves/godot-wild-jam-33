@@ -1,10 +1,7 @@
 extends Node2D
 var Elements = Globals.Elements
 
-var running = false
-var duration = 2
-
-var timer = 0
+export var duration = 2
 
 export(Texture) var sprite = null
 
@@ -17,18 +14,11 @@ func telegraph() -> void:
 	$Sprite.visible = true
 
 func done() -> void:
-	get_parent().get_parent().move_away_from_player = false
-	running = false
 	$Sprite.visible = false
 	$AnimationPlayer.stop()
 	
-func _process(delta: float) -> void:
-	if running:
-		timer += delta
-		if timer >= duration:
-			done()
-
-func execute(unit: Node, owner: Node) -> void:
+func execute(_unit: Node, owner: Node) -> void:
 	owner.move_away_from_player = true
-	running = true
-	timer = 0
+
+func after_duration(_unit: Node, owner: Node) -> void:
+	owner.move_away_from_player = false

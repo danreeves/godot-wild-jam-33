@@ -28,7 +28,7 @@ func done() -> void:
 	$Sprite.visible = false
 	$AnimationPlayer.stop()
 
-func execute(unit: Node, owner: Node) -> void:
+func execute(unit: Node, _owner: Node) -> void:
 	var damage = base_damage
 	var unit_element = unit.element
 	var multiplier = 1

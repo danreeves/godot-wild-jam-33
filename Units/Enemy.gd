@@ -8,6 +8,7 @@ export var move_away_from_player = false
 func _ready() -> void:
 	var _err1 = $InCombat.connect("body_entered", self, "unit_enter_range")
 	var _err2 = $InCombat.connect("body_exited", self, "unit_leave_range")
+	move_child($AnimatedSprite, 0)
 
 func get_target() -> Node2D:
 	return get_tree().get_nodes_in_group("Player").front()
@@ -27,6 +28,10 @@ func die() -> void:
 func is_element(elem) -> bool:
 	return element == elem
 
+func _process(_delta: float) -> void:
+	if get_target().dead:
+		$AttackQueue.stop()
+
 func _physics_process(_delta: float) -> void:
 	var velocity = Vector2.ZERO
 	var target = get_target()
@@ -36,5 +41,11 @@ func _physics_process(_delta: float) -> void:
 	
 	if target and move_away_from_player:
 		velocity = (self.position - target.position).normalized() * speed * 1.2
+		
+	if velocity == Vector2.ZERO:
+		if $AnimatedSprite.animation == "run":
+			$AnimatedSprite.play("idle")
+	else:
+		$AnimatedSprite.play("run")
 	
 	velocity = move_and_slide(velocity)

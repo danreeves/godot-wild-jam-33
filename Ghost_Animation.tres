@@ -29,18 +29,18 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "run",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 21 ), ExtResource( 4 ) ],
-"loop": true,
+"loop": false,
 "name": "attack",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "damage",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run",
 "speed": 5.0
 } ]
