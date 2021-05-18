@@ -2,10 +2,8 @@ extends Node
 
 enum Elements {
 	None,
-	Holy,
-	Unholy,
 	Fire,
-	Earth,
+	Grass,
 	Water,
 	Air,
 }

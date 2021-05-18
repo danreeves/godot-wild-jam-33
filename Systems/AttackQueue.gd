@@ -48,5 +48,5 @@ func start_timer() -> void:
 func on_timer_end() -> void:
 	if current_attack.has_method("execute"):
 		var target = get_parent().get_target()
-		current_attack.execute(target)
+		current_attack.execute(target, get_parent())
 	$Cooldown.start()

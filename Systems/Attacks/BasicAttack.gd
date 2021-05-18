@@ -6,14 +6,14 @@ export var base_damage: int = 40
 export(Globals.Elements) var element = Elements.None
 
 var multiplier_lookup = [
-	[Elements.Holy, Elements.Unholy, 1.5],
-	[Elements.Unholy, Elements.Holy, 1.5],
-	
-	[Elements.Fire, Elements.Water, 1.5],
+	[Elements.Fire, Elements.Water, 0.5],
 	[Elements.Water, Elements.Fire, 1.5],
 	
-	[Elements.Air, Elements.Earth, 1.5],
-	[Elements.Earth, Elements.Air, 1.5],
+	[Elements.Water, Elements.Grass, 0.5],
+	[Elements.Grass, Elements.Water, 1.5],
+	
+	[Elements.Grass, Elements.Fire, 0.5],
+	[Elements.Fire, Elements.Grass, 1.5],
 ]
 
 func _ready() -> void:
@@ -28,7 +28,7 @@ func done() -> void:
 	$Sprite.visible = false
 	$AnimationPlayer.stop()
 
-func execute(unit: Node) -> void:
+func execute(unit: Node, owner: Node) -> void:
 	var damage = base_damage
 	var unit_element = unit.element
 	var multiplier = 1
