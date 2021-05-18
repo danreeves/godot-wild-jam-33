@@ -24,6 +24,9 @@ func _process(_delta: float) -> void:
 		$AttackQueue.stop()
 		unit_in_range_last_frame = false
 	
+	if !get_nearest_enemy():
+		$AnimatedSprite.play("camp")
+	
 func _physics_process(_delta: float) -> void:
 	if dead:
 		return

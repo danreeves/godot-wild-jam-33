@@ -4,8 +4,8 @@ export(Texture) var _texture = null
 
 func _ready() -> void:
 	texture = _texture
-	connect("mouse_entered", self, "mouse_entered")
-	connect("mouse_exited", self, "mouse_exited")
+	var _err1 = connect("mouse_entered", self, "mouse_entered")
+	var _err2 = connect("mouse_exited", self, "mouse_exited")
 
 func _process(delta: float) -> void:
 	$Progress.rect_size.x -= delta * 10

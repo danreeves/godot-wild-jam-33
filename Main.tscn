@@ -7,33 +7,37 @@
 
 [node name="World" type="Node"]
 
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 36.5961, 276.53 )
+
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 412.951, 82.0248 )
-move_to_player = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy"]
+scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
+frame = 2
 playing = true
 
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 608.112, 438.407 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy2"]
+scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Enemy3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 943.281, 98.9954 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy3"]
+scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
+frame = 2
 playing = true
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 36.5961, 276.53 )
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]

@@ -24,7 +24,6 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 2
 playing = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
@@ -40,7 +39,7 @@ position = Vector2( 309.713, 22.6274 )
 current = true
 
 [node name="Health" parent="." instance=ExtResource( 5 )]
-position = Vector2( 0, 40.9813 )
+position = Vector2( 0, 78.7789 )
 
 [node name="AttackQueue" parent="." instance=ExtResource( 4 )]
 position = Vector2( -0.473541, -78.5287 )
