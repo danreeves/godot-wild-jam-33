@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ghost_Animation.tres" type="SpriteFrames" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 95.5362
+height = 118.64
+
+[node name="Ghost" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 3.77972, -1.25992 )
+rotation = 0.000606748
+frames = ExtResource( 1 )
+animation = "run"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 9.9473, 23.8409 )
+scale = Vector2( 0.671393, 0.68714 )
+shape = SubResource( 1 )
