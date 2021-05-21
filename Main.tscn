@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Units/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Units/Enemy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Ghost_Animation.tres" type="SpriteFrames" id=4]
 
 [node name="World" type="Node"]
@@ -17,7 +16,7 @@ position = Vector2( 412.951, 82.0248 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
@@ -27,6 +26,7 @@ position = Vector2( 608.112, 438.407 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="Enemy3" parent="." instance=ExtResource( 2 )]
@@ -36,7 +36,5 @@ position = Vector2( 943.281, 98.9954 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
-
-[node name="HUD" parent="." instance=ExtResource( 3 )]

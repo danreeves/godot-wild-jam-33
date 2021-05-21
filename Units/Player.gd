@@ -6,10 +6,13 @@ var in_range = []
 var unit_in_range_last_frame = false
 export var dead = false
 
+onready var spell_manager = $SpellManager
+
 func _ready() -> void:
 	var _err1 = $InCombat.connect("body_entered", self, "unit_enter_range")
 	var _err2 = $InCombat.connect("body_exited", self, "unit_leave_range")
 	var _err3 = $AnimatedSprite.connect("animation_finished", self, "animation_finished")
+	var _err4 = $ClickArea.connect("input_event", self, "input_event")
 
 func _process(_delta: float) -> void:
 	if dead:
@@ -77,3 +80,7 @@ func animation_finished() -> void:
 	if $AnimatedSprite.animation == "attack":
 		$AnimatedSprite.play("idle")
 		
+func input_event(_vp, event: InputEvent, _idx) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
+		if spell_manager.active_spell_can_target(get_groups()):
+			spell_manager.cast(self)

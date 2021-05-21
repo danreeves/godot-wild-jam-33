@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Object",
+"class": "ChangeElement",
+"language": "GDScript",
+"path": "res://Systems/Spells/ChangeElement.gd"
+}, {
+"base": "Object",
+"class": "Heal",
+"language": "GDScript",
+"path": "res://Systems/Spells/Heal.gd"
+}, {
+"base": "Object",
+"class": "Heal2",
+"language": "GDScript",
+"path": "res://Systems/Spells/Heal2.gd"
+} ]
+_global_script_class_icons={
+"ChangeElement": "",
+"Heal": "",
+"Heal2": ""
+}
+
 [application]
 
 config/name="godot-wild-jam-33"
