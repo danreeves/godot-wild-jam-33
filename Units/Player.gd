@@ -48,7 +48,9 @@ func unit_enter_range(unit):
 		in_range.append(unit)
 	
 func unit_leave_range(unit):
-	in_range.remove(in_range.find(unit))
+	var index = in_range.find(unit)
+	if index >= 0:
+		in_range.remove(index)
 
 func get_nearest_enemy() -> Node2D:
 	var enemies = get_tree().get_nodes_in_group("Enemies")
