@@ -67,7 +67,8 @@ func on_cooldown_end() -> void:
 func on_timer_end() -> void:
 	if current_attack.has_method("execute"):
 		var target = get_parent().get_target()
-		current_attack.execute(target, get_parent())
+		if target:
+			current_attack.execute(target, get_parent())
 	get_parent().find_node("AnimatedSprite").play("attack")
 	$Duration.start()
 

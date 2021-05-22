@@ -14,6 +14,10 @@ var multiplier_lookup = [
 	
 	[Elements.Grass, Elements.Fire, 0.5],
 	[Elements.Fire, Elements.Grass, 1.5],
+	
+	[Elements.Fire, Elements.Fire, 0.8],
+	[Elements.Water, Elements.Water, 0.8],
+	[Elements.Grass, Elements.Grass, 0.8],
 ]
 
 func _ready() -> void:

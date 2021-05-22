@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/DamageNumber.gd" type="Script" id=1]
+[ext_resource path="res://PixelatedPusab.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="DamageNumber" type="Node2D"]
+script = ExtResource( 1 )
+red = Color( 1, 0, 0, 1 )
+green = Color( 0, 1, 0.0156863, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[color=red][wave amp=150 freq=-0.5]100"
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true

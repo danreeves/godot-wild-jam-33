@@ -8,8 +8,9 @@ export (int) var mana = max_mana
 
 var spells = [
 	Heal.new(),
-	Heal2.new(),
-	ChangeElement.new()
+	ToGrass.new(),
+	ToFire.new(),
+	ToWater.new(),
 ]
 var active_spell = null
 
@@ -47,19 +48,24 @@ func _unhandled_input(event: InputEvent) -> void:
 		for button in HUD.find_node("Spells").get_children():
 			button.deselect()
 
-func spell_activated(target):
-	print(target)
-
-func active_spell_can_target(groups: Array) -> bool:
+func active_spell_can_target(unit: Node) -> bool:
+	var groups = unit.get_groups()
+	
+	var in_targetable_group = false
+	var unit_is_valid = true
+	
 	if not active_spell:
 		return false
 	
 	for group in groups:
 		for targetable_group in active_spell.targetable_groups:
 			if targetable_group == group:
-				return true
-		
-	return false
+				in_targetable_group = true
+				
+	if active_spell.has_method("is_unit_valid"):
+		unit_is_valid = active_spell.is_unit_valid(unit)
+				
+	return in_targetable_group and unit_is_valid
 
 func cast(target):
 	if active_spell.has_method("cast"):

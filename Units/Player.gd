@@ -80,7 +80,8 @@ func get_nearest_enemy() -> Node2D:
 func get_in_range() -> Array:
 	var not_dead = []
 	for enemy in in_range:
-		if "dead" in enemy and !enemy.dead:
+		if "dead" in enemy and !enemy.dead \
+		and "move_away_from_player" in enemy and !enemy.move_away_from_player:
 			not_dead.append(enemy)
 	return not_dead
 
@@ -101,5 +102,5 @@ func animation_finished() -> void:
 		
 func input_event(_vp, event: InputEvent, _idx) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		if spell_manager.active_spell_can_target(get_groups()):
+		if spell_manager.active_spell_can_target(self):
 			spell_manager.cast(self)

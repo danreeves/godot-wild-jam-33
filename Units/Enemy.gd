@@ -18,12 +18,16 @@ func _ready() -> void:
 	set_element(element)
 
 func get_target() -> Node2D:
-	return get_tree().get_nodes_in_group("Player").front()
+	var players = get_tree().get_nodes_in_group("Player")
+	if players.size() > 0:
+		return players.front()
+	return null
 
 func unit_enter_range(unit: Node2D) -> void:
 	if unit == get_target():
 		move_to_player = false
-		$AttackQueue.start_timer()
+		if !dead:
+			$AttackQueue.start_timer()
 
 func unit_leave_range(unit: Node2D) -> void:
 	if unit == get_target():
@@ -32,6 +36,7 @@ func unit_leave_range(unit: Node2D) -> void:
 func die() -> void:
 	dead = true
 	$AttackQueue.stop()
+	$AnimatedSprite.stop()
 	$AnimatedSprite.play("die")
 	$AnimatedSprite.flip_h = false
 	set_element(Globals.Elements.None)
@@ -80,12 +85,12 @@ func _physics_process(_delta: float) -> void:
 	velocity = move_and_slide(velocity)
 
 func animation_finished() -> void:
-	if $AnimatedSprite.animation == "attack":
+	if $AnimatedSprite.animation == "attack" and !dead:
 		$AnimatedSprite.play("idle")
 	
 func input_event(_vp, event: InputEvent, _idx) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		if spell_manager.active_spell_can_target(get_groups()):
+		if spell_manager.active_spell_can_target(self):
 			spell_manager.cast(self)
 
 func set_element(ele):
