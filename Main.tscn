@@ -14,7 +14,7 @@ extents = Vector2( 9999, 10 )
 position = Vector2( -373.68, 0.633972 )
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 15.7559, 8.29397 )
+position = Vector2( -613.569, 2.63717 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy"]
 scale = Vector2( 0.5, 0.5 )
@@ -36,7 +36,7 @@ playing = true
 flip_h = true
 
 [node name="Enemy3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 797.056, -100.319 )
+position = Vector2( 601.895, -110.219 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy3"]
 scale = Vector2( 0.5, 0.5 )
@@ -53,7 +53,13 @@ drag_margin_v_enabled = true
 script = ExtResource( 3 )
 
 [node name="Horizon" type="StaticBody2D" parent="."]
-position = Vector2( -5.99316, -191.783 )
+position = Vector2( -14.4785, -200.268 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon"]
+shape = SubResource( 1 )
+
+[node name="Horizon2" type="StaticBody2D" parent="."]
+position = Vector2( -4.57898, 298.949 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon2"]
 shape = SubResource( 1 )

@@ -50,6 +50,10 @@ func _physics_process(_delta: float) -> void:
 		$AnimatedSprite.play("combat")
 	elif $AnimatedSprite.animation == "run":
 		$AnimatedSprite.play("idle")
+	
+	if velocity != Vector2.ZERO:
+		$AnimatedSprite.flip_h = velocity.x < 0
+		
 	velocity = move_and_slide(velocity)
 
 func unit_enter_range(unit):
@@ -64,7 +68,7 @@ func unit_leave_range(unit):
 func get_nearest_enemy() -> Node2D:
 	var enemies = get_tree().get_nodes_in_group("Enemies")
 	var nearest = null
-	var nearest_distance = 1000
+	var nearest_distance = 999999999999999999
 	for enemy in enemies:
 		if !enemy.dead:
 			var distance = self.position.distance_to(enemy.position)
@@ -76,7 +80,7 @@ func get_nearest_enemy() -> Node2D:
 func get_in_range() -> Array:
 	var not_dead = []
 	for enemy in in_range:
-		if !enemy.dead:
+		if "dead" in enemy and !enemy.dead:
 			not_dead.append(enemy)
 	return not_dead
 

@@ -41,34 +41,6 @@ wait_time = 2.1
 sprite = ExtResource( 6 )
 base_damage = 20
 
-[node name="BasicAttack2" parent="AttackQueue" instance=ExtResource( 4 )]
-sprite = ExtResource( 6 )
-base_damage = 20
-
-[node name="BasicAttack3" parent="AttackQueue" instance=ExtResource( 4 )]
-sprite = ExtResource( 6 )
-base_damage = 20
-
-[node name="BasicAttack4" parent="AttackQueue" instance=ExtResource( 4 )]
-sprite = ExtResource( 6 )
-base_damage = 20
-
-[node name="BasicAttack5" parent="AttackQueue" instance=ExtResource( 4 )]
-sprite = ExtResource( 6 )
-base_damage = 20
-
-[node name="BasicAttack6" parent="AttackQueue" instance=ExtResource( 4 )]
-sprite = ExtResource( 6 )
-base_damage = 20
-
-[node name="BasicAttack7" parent="AttackQueue" instance=ExtResource( 4 )]
-sprite = ExtResource( 6 )
-base_damage = 20
-
-[node name="BasicAttack8" parent="AttackQueue" instance=ExtResource( 4 )]
-sprite = ExtResource( 6 )
-base_damage = 20
-
 [node name="RunAway" parent="AttackQueue" instance=ExtResource( 8 )]
 sprite = ExtResource( 7 )
 

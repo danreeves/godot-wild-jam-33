@@ -35,6 +35,7 @@ func die() -> void:
 	$AnimatedSprite.play("die")
 	$AnimatedSprite.flip_h = false
 	set_element(Globals.Elements.None)
+	$Hitbox.disabled = true
 
 func is_element(elem) -> bool:
 	return element == elem
@@ -42,8 +43,6 @@ func is_element(elem) -> bool:
 func _process(_delta: float) -> void:
 	if dead: 
 		return
-		
-	$AnimatedSprite.flip_h = !move_away_from_player
 	
 	# bobbus wrote this code
 	var size = 1 + position.y * 0.002
@@ -53,6 +52,9 @@ func _process(_delta: float) -> void:
 		$AttackQueue.stop()
 
 func _physics_process(_delta: float) -> void:
+	if dead:
+		return
+		
 	var velocity = Vector2.ZERO
 	var target = get_target()
 	
@@ -63,10 +65,17 @@ func _physics_process(_delta: float) -> void:
 		velocity = (self.position - target.position).normalized() * speed * 1.2
 		
 	if velocity == Vector2.ZERO:
-		if $AnimatedSprite.animation == "run":
+		if $AnimatedSprite.animation == "run" \
+		or $AnimatedSprite.animation == "flee":
 			$AnimatedSprite.play("idle")
+	elif move_away_from_player:
+		$AnimatedSprite.play("flee")
 	else:
 		$AnimatedSprite.play("run")
+		
+	$AnimatedSprite.flip_h = target.position.x < position.x
+	if move_away_from_player:
+		$AnimatedSprite.flip_h = !$AnimatedSprite.flip_h
 	
 	velocity = move_and_slide(velocity)
 
