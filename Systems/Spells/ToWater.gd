@@ -1,9 +1,9 @@
 extends Object
 class_name ToWater
 
-export (String) var name = "To Water"
+export (String) var name = "Water"
 export (Array) var targetable_groups = ["Enemies"]
-export (Texture) var texture = load("res://button1.png")
+export (Texture) var texture = load("res://assets/UI/ToWater.png")
 export (int) var mana_cost = 10
 export (int) var cooldown = 1
 

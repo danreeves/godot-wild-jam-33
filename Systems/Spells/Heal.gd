@@ -3,7 +3,7 @@ class_name Heal
 
 export (String) var name = "Heal"
 export (Array) var targetable_groups = ["Player"]
-export (Texture) var texture = load("res://button1.png")
+export (Texture) var texture = load("res://assets/UI/Heal.png")
 export (int) var mana_cost = 20
 export (int) var cooldown = 1
 
