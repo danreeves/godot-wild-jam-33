@@ -1,9 +1,9 @@
 extends Object
 class_name ToFire
 
-export (String) var name = "To Fire"
+export (String) var name = "Fire"
 export (Array) var targetable_groups = ["Enemies"]
-export (Texture) var texture = load("res://button1.png")
+export (Texture) var texture = load("res://assets/UI/ToFire.png")
 export (int) var mana_cost = 10
 export (int) var cooldown = 1
 

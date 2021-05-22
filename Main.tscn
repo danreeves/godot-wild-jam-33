@@ -4,7 +4,7 @@
 [ext_resource path="res://Units/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Ghost_Animation.tres" type="SpriteFrames" id=4]
-[ext_resource path="res://floortexture.png" type="Texture" id=5]
+[ext_resource path="res://bobbus-bg.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
@@ -12,10 +12,11 @@ extents = Vector2( 9999, 10 )
 [node name="World" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -715.592
-margin_top = -197.99
-margin_right = 99283.4
-margin_bottom = 402.01
+margin_left = -712.764
+margin_top = -294.156
+margin_right = 99286.2
+margin_bottom = 371.844
+rect_scale = Vector2( 0.777701, 0.97496 )
 mouse_filter = 2
 texture = ExtResource( 5 )
 stretch_mode = 2
@@ -30,7 +31,7 @@ position = Vector2( -194.962, -0.191315 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 15
+frame = 2
 playing = true
 flip_h = true
 
@@ -41,7 +42,7 @@ position = Vector2( 154.474, -1.34589 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 flip_h = true
 
@@ -52,7 +53,7 @@ position = Vector2( 601.895, -110.219 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 15
+frame = 2
 playing = true
 flip_h = true
 
@@ -63,14 +64,12 @@ position = Vector2( 611.794, 137.269 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 15
+frame = 2
 playing = true
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
 script = ExtResource( 3 )
 
 [node name="Horizon" type="StaticBody2D" parent="."]
