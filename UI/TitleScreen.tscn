@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://PixelatedPusab.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Art/Decor/decor_title.png" type="Texture" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
@@ -20,8 +21,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 1600.0
+margin_bottom = 900.0
+rect_scale = Vector2( 0.639931, 0.64005 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -29,6 +32,7 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 40.0
 custom_styles/normal = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0.94902, 0.803922, 0.027451, 1 )
