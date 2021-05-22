@@ -1,13 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Units/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Units/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://assets/Animation/Ghost_Animation.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=5]
-[ext_resource path="res://assets/Art/Decor/decor_Beer.png" type="Texture" id=6]
-[ext_resource path="res://assets/Art/Decor/decor_Camp.png" type="Texture" id=7]
-[ext_resource path="res://assets/Art/Decor/decor_Fire.png" type="Texture" id=8]
 [ext_resource path="res://assets/Art/Decor/decor_Flowers.png" type="Texture" id=9]
 [ext_resource path="res://assets/Art/Decor/decor_Shrub.png" type="Texture" id=10]
 [ext_resource path="res://assets/Art/Decor/decor_Tree.png" type="Texture" id=11]
@@ -37,7 +34,7 @@ position = Vector2( -194.962, -0.191315 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 5
+frame = 9
 playing = true
 flip_h = true
 
@@ -48,7 +45,7 @@ position = Vector2( 154.474, -1.34589 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 1
+frame = 5
 playing = true
 flip_h = true
 
@@ -59,7 +56,7 @@ position = Vector2( 601.895, -110.219 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 5
+frame = 9
 playing = true
 flip_h = true
 
@@ -70,7 +67,7 @@ position = Vector2( 611.794, 137.269 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 5
+frame = 9
 playing = true
 flip_h = true
 
@@ -92,18 +89,6 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -486.817, -2.19452 )
-
-[node name="decor_Beer" type="Sprite" parent="."]
-position = Vector2( -230.788, 225.652 )
-texture = ExtResource( 6 )
-
-[node name="decor_Camp" type="Sprite" parent="."]
-position = Vector2( -314.694, -208.857 )
-texture = ExtResource( 7 )
-
-[node name="decor_Fire" type="Sprite" parent="."]
-position = Vector2( 338.568, 146.242 )
-texture = ExtResource( 8 )
 
 [node name="decor_Flowers" type="Sprite" parent="."]
 position = Vector2( 74.8663, -211.854 )
