@@ -85,7 +85,7 @@ func _physics_process(_delta: float) -> void:
 	velocity = move_and_slide(velocity)
 
 func animation_finished() -> void:
-	if $AnimatedSprite.animation == "attack" and !dead:
+	if ($AnimatedSprite.animation == "attack" or $AnimatedSprite.animation == "hit") and !dead:
 		$AnimatedSprite.play("idle")
 	
 func input_event(_vp, event: InputEvent, _idx) -> void:

@@ -15,6 +15,7 @@ func add_damage(num: int) -> void:
 	damage_number.position = Vector2(-13, -31)
 	add_child(damage_number)
 	health = health - num
+	get_parent().find_node("AnimatedSprite").play("hit")
 	if health <= 0:
 		die()
 	
