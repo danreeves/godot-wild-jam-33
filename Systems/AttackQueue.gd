@@ -48,7 +48,16 @@ func start_timer() -> void:
 		return
 	randomize()
 	attacks.shuffle()
-	current_attack = attacks.front()
+	var valid_attacks = []
+	for attack in attacks:
+		if attack.can_target_unit(get_parent().get_target()):
+			valid_attacks.append(attack)
+	
+	if valid_attacks.size() > 0:
+		current_attack = valid_attacks.front()
+	else:
+		return
+		
 	$Progress.scale.x = 0
 	$Timer.start()
 	if "duration" in current_attack:
@@ -70,12 +79,13 @@ func on_timer_end() -> void:
 		if target:
 			current_attack.execute(target, get_parent())
 			
-	if "element" in current_attack:
-		var anim = Globals.ElementAnim[current_attack.element]
-		get_parent().find_node("AnimatedSprite").play(anim)
-	else:
-		get_parent().find_node("AnimatedSprite").play("attack")
-	$Duration.start()
+	if current_attack:
+		if "element" in current_attack:
+			var anim = Globals.ElementAnim[current_attack.element]
+			get_parent().find_node("AnimatedSprite").play(anim)
+		else:
+			get_parent().find_node("AnimatedSprite").play("attack")
+		$Duration.start()
 
 func on_duration_end() -> void:
 	if current_attack.has_method("after_duration"):

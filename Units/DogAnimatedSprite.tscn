@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/Animation/Ghost_Animation.tres" type="SpriteFrames" id=1]
+
+[node name="AnimatedSprite" type="AnimatedSprite"]
+scale = Vector2( 0.5, 0.5 )
+frames = ExtResource( 1 )
+animation = "idle"
+flip_h = true
