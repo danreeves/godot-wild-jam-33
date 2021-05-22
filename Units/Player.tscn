@@ -29,7 +29,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 19
+frame = 13
 playing = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
@@ -66,11 +66,11 @@ element = 5
 sprite = ExtResource( 9 )
 element = 5
 
-[node name="HUD" parent="." instance=ExtResource( 10 )]
-
 [node name="SpellManager" parent="." instance=ExtResource( 11 )]
 
 [node name="ClickArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
 shape = SubResource( 3 )
+
+[node name="HUD" parent="." instance=ExtResource( 10 )]

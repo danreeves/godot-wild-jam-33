@@ -33,7 +33,7 @@ func die() -> void:
 func is_element(elem) -> bool:
 	return element == elem
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$AnimatedSprite.flip_h = move_away_from_player
 	
 	if get_target().dead:

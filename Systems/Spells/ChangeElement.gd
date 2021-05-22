@@ -4,6 +4,8 @@ class_name ChangeElement
 export (String) var name = "Transmute"
 export (Array) var targetable_groups = ["Enemies"]
 export (Texture) var texture = load("res://button1.png")
+export (int) var mana_cost = 10
+export (int) var cooldown = 1
 
 func cast(target):
 	if "element" in target:
