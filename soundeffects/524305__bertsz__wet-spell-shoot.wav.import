@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/524305__bertsz__wet-spell-shoot.wav-f2910520919497e6bed85dedd3be469e.sample"
+
+[deps]
+
+source_file="res://soundeffects/524305__bertsz__wet-spell-shoot.wav"
+dest_files=[ "res://.import/524305__bertsz__wet-spell-shoot.wav-f2910520919497e6bed85dedd3be469e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

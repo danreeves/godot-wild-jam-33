@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/416968__ohnobones__goblin-burp.mp3-d0210df72e1a4e9c50cee0b938e4cf74.mp3str"
+
+[deps]
+
+source_file="res://soundeffects/416968__ohnobones__goblin-burp.mp3"
+dest_files=[ "res://.import/416968__ohnobones__goblin-burp.mp3-d0210df72e1a4e9c50cee0b938e4cf74.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
