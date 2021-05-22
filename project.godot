@@ -10,11 +10,6 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Object",
-"class": "ChangeElement",
-"language": "GDScript",
-"path": "res://Systems/Spells/ChangeElement.gd"
-}, {
-"base": "Object",
 "class": "Heal",
 "language": "GDScript",
 "path": "res://Systems/Spells/Heal.gd"
@@ -23,11 +18,28 @@ _global_script_classes=[ {
 "class": "Heal2",
 "language": "GDScript",
 "path": "res://Systems/Spells/Heal2.gd"
+}, {
+"base": "Object",
+"class": "ToFire",
+"language": "GDScript",
+"path": "res://Systems/Spells/ToFire.gd"
+}, {
+"base": "Object",
+"class": "ToGrass",
+"language": "GDScript",
+"path": "res://Systems/Spells/ToGrass.gd"
+}, {
+"base": "Object",
+"class": "ToWater",
+"language": "GDScript",
+"path": "res://Systems/Spells/ToWater.gd"
 } ]
 _global_script_class_icons={
-"ChangeElement": "",
 "Heal": "",
-"Heal2": ""
+"Heal2": "",
+"ToFire": "",
+"ToGrass": "",
+"ToWater": ""
 }
 
 [application]

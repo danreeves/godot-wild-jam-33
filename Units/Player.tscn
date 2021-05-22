@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Hero_Animation.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Units/Player.gd" type="Script" id=2]
@@ -7,18 +7,17 @@
 [ext_resource path="res://Systems/Health.tscn" type="PackedScene" id=5]
 [ext_resource path="res://water.png" type="Texture" id=6]
 [ext_resource path="res://fire.png" type="Texture" id=7]
-[ext_resource path="res://attack.png" type="Texture" id=8]
 [ext_resource path="res://grass.png" type="Texture" id=9]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Systems/SpellManager.tscn" type="PackedScene" id=11]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=3]
 radius = 40.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 80.0
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=4]
 radius = 50.0
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -27,22 +26,18 @@ radius = 50.0
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 1 )
-animation = "idle"
-frame = 11
+animation = "combat"
 playing = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="InCombat" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InCombat"]
 shape = SubResource( 2 )
-
-[node name="Camera" type="Camera2D" parent="."]
-position = Vector2( 309.713, 22.6274 )
-current = true
 
 [node name="Health" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, 78.7789 )
@@ -51,26 +46,23 @@ position = Vector2( 0, 78.7789 )
 position = Vector2( -0.473541, -78.5287 )
 wait_time = 2.0
 
-[node name="BasicAttack" parent="AttackQueue" instance=ExtResource( 3 )]
-sprite = ExtResource( 8 )
-
 [node name="FireAttack" parent="AttackQueue" instance=ExtResource( 3 )]
 sprite = ExtResource( 7 )
-element = 3
+element = 1
 
 [node name="WaterAttack" parent="AttackQueue" instance=ExtResource( 3 )]
 sprite = ExtResource( 6 )
-element = 5
+element = 3
 
 [node name="GrassAttack" parent="AttackQueue" instance=ExtResource( 3 )]
 sprite = ExtResource( 9 )
-element = 5
+element = 2
 
 [node name="SpellManager" parent="." instance=ExtResource( 11 )]
 
 [node name="ClickArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="HUD" parent="." instance=ExtResource( 10 )]

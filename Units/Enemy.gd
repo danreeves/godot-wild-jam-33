@@ -7,6 +7,8 @@ export var move_away_from_player = false
 
 onready var spell_manager = get_target().find_node("SpellManager")
 
+export var dead = false
+
 func _ready() -> void:
 	var _err1 = $InCombat.connect("body_entered", self, "unit_enter_range")
 	var _err2 = $InCombat.connect("body_exited", self, "unit_leave_range")
@@ -16,30 +18,48 @@ func _ready() -> void:
 	set_element(element)
 
 func get_target() -> Node2D:
-	return get_tree().get_nodes_in_group("Player").front()
+	var players = get_tree().get_nodes_in_group("Player")
+	if players.size() > 0:
+		return players.front()
+	return null
 
 func unit_enter_range(unit: Node2D) -> void:
 	if unit == get_target():
 		move_to_player = false
-		$AttackQueue.start_timer()
+		if !dead:
+			$AttackQueue.start_timer()
 
 func unit_leave_range(unit: Node2D) -> void:
 	if unit == get_target():
 		$AttackQueue.stop()
 
 func die() -> void:
-	queue_free()
+	dead = true
+	$AttackQueue.stop()
+	$AnimatedSprite.stop()
+	$AnimatedSprite.play("die")
+	$AnimatedSprite.flip_h = false
+	set_element(Globals.Elements.None)
+	$Hitbox.disabled = true
 
 func is_element(elem) -> bool:
 	return element == elem
 
 func _process(_delta: float) -> void:
-	$AnimatedSprite.flip_h = move_away_from_player
+	if dead: 
+		return
+	
+	# bobbus wrote this code
+	var size = 1 + position.y * 0.002
+	scale = Vector2(size, size)
 	
 	if get_target().dead:
 		$AttackQueue.stop()
 
 func _physics_process(_delta: float) -> void:
+	if dead:
+		return
+		
 	var velocity = Vector2.ZERO
 	var target = get_target()
 	
@@ -50,20 +70,27 @@ func _physics_process(_delta: float) -> void:
 		velocity = (self.position - target.position).normalized() * speed * 1.2
 		
 	if velocity == Vector2.ZERO:
-		if $AnimatedSprite.animation == "run":
+		if $AnimatedSprite.animation == "run" \
+		or $AnimatedSprite.animation == "flee":
 			$AnimatedSprite.play("idle")
+	elif move_away_from_player:
+		$AnimatedSprite.play("flee")
 	else:
 		$AnimatedSprite.play("run")
+		
+	$AnimatedSprite.flip_h = target.position.x < position.x
+	if move_away_from_player:
+		$AnimatedSprite.flip_h = !$AnimatedSprite.flip_h
 	
 	velocity = move_and_slide(velocity)
 
 func animation_finished() -> void:
-	if $AnimatedSprite.animation == "attack":
+	if $AnimatedSprite.animation == "attack" and !dead:
 		$AnimatedSprite.play("idle")
 	
 func input_event(_vp, event: InputEvent, _idx) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		if spell_manager.active_spell_can_target(get_groups()):
+		if spell_manager.active_spell_can_target(self):
 			spell_manager.cast(self)
 
 func set_element(ele):
