@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=2]
+
+[ext_resource path="res://assets/Art/Decor/decor_Fire2_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/Art/Decor/decor_Fire1_1.png" type="Texture" id=2]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "combat",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "flee",
+"speed": 5.0
+} ]
