@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/Art/Ghost/ghost_Run1_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/Art/Ghost/ghost_Run2_1.png" type="Texture" id=2]
-[ext_resource path="res://assets/Art/Ghost/ghost_Hit1_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Art/Ghost/ghost_Combat2_1.png" type="Texture" id=3]
 [ext_resource path="res://assets/Art/Ghost/ghost_Idle2_1.png" type="Texture" id=4]
 [ext_resource path="res://assets/Art/Ghost/ghost_Idle1_1.png" type="Texture" id=5]
 [ext_resource path="res://assets/Art/Ghost/ghost_Hit2_1.png" type="Texture" id=6]
@@ -14,7 +14,7 @@
 [ext_resource path="res://assets/Art/Ghost/ghost_Die1_1.png" type="Texture" id=12]
 [ext_resource path="res://assets/Art/Ghost/ghost_Die2_1.png" type="Texture" id=13]
 [ext_resource path="res://assets/Art/Ghost/ghost_Die3_1.png" type="Texture" id=14]
-[ext_resource path="res://assets/Art/Ghost/ghost_Flee1.png" type="Texture" id=15]
+[ext_resource path="res://assets/Art/Ghost/ghost_Combat1_1.png" type="Texture" id=15]
 [ext_resource path="res://assets/Art/Ghost/ghost_Flee2.png" type="Texture" id=16]
 [ext_resource path="res://assets/Art/Ghost/ghost_Die4_1.png" type="Texture" id=17]
 [ext_resource path="res://assets/Art/Ghost/ghost_Die5_1.png" type="Texture" id=18]
@@ -28,11 +28,6 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "hit",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": false,
 "name": "die",
@@ -43,12 +38,22 @@ animations = [ {
 "name": "attack",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 15 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "combat",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "flee",
 "speed": 5.0
