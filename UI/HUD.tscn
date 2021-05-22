@@ -4,7 +4,7 @@
 [ext_resource path="res://PixelatedPusab.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://health.png" type="Texture" id=3]
 [ext_resource path="res://mana.png" type="Texture" id=4]
-[ext_resource path="res://assets/Art/Hero/hero_Camp4.png" type="Texture" id=5]
+[ext_resource path="res://assets/Animation/Hero_Animation.tres" type="SpriteFrames" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -73,6 +73,7 @@ __meta__ = {
 }
 
 [node name="Control" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -126,16 +127,10 @@ custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
 text = "QUIT"
 flat = true
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-margin_left = 364.997
-margin_top = 279.593
-margin_right = 664.997
-margin_bottom = 580.593
-rect_min_size = Vector2( 300, 301 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control"]
+position = Vector2( 524.407, 433.011 )
+frames = ExtResource( 7 )
+animation = "camp"
 
 [node name="Control2" type="Control" parent="."]
 visible = false
@@ -192,8 +187,12 @@ custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
 text = "QUIT"
 flat = true
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control2/VictoryMenu"]
+position = Vector2( 140.841, 372.164 )
+frames = ExtResource( 7 )
+animation = "drink"
+
 [node name="Control3" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -246,3 +245,8 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
 text = "QUIT"
 flat = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control3"]
+position = Vector2( 531.899, 431.512 )
+frames = ExtResource( 7 )
+animation = "die"
