@@ -4,6 +4,7 @@ var Elements = Globals.Elements
 export(Texture) var sprite = null
 export var base_damage: int = 40
 export(Globals.Elements) var element = Elements.None
+export(Array) var valid_targets = []
 
 var multiplier_lookup = [
 	[Elements.Fire, Elements.Water, 0.5],
@@ -31,10 +32,20 @@ func telegraph() -> void:
 func done() -> void:
 	$Sprite.visible = false
 	$AnimationPlayer.stop()
+	
+func can_target_unit(unit) -> bool:
+	if !unit:
+		return false
+	var health = unit.find_node("Health")
+	if health:
+		return true
+	return false
 
 func execute(unit: Node, _owner: Node) -> void:
 	var damage = base_damage
-	var unit_element = unit.element
+	var unit_element = Globals.Elements.None
+	if "element" in unit:
+		unit_element = unit.element
 	var multiplier = 1
 	
 	for lookup in multiplier_lookup:
@@ -43,6 +54,8 @@ func execute(unit: Node, _owner: Node) -> void:
 				multiplier = lookup.back()
 	
 	damage = base_damage * multiplier
-		
-	unit.find_node("Health").add_damage(damage)
+	
+	var health = unit.find_node("Health")
+	if health:
+		health.add_damage(damage)
 	done()

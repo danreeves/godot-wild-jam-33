@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Animation/Fire_Animation.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Units/Campfire.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 1.0
+
+[node name="Campfire" type="StaticBody2D" groups=[
+"Goal",
+]]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = ExtResource( 1 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

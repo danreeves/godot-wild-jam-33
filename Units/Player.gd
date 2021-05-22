@@ -20,11 +20,17 @@ func _process(_delta: float) -> void:
 		$AttackQueue.stop()
 		return
 		
-	if !unit_in_range_last_frame and get_in_range().size() > 0:
+	if $AnimatedSprite.animation == "camp":
+		$AttackQueue.stop()
+		return
+		
+	var target = get_nearest_enemy()
+		
+	if !unit_in_range_last_frame and is_in_range(target):
 		$AttackQueue.start_timer()
 		unit_in_range_last_frame = true
 		
-	if get_in_range().size() == 0:
+	if !is_in_range(target):
 		$AttackQueue.stop()
 		unit_in_range_last_frame = false
 	
@@ -39,6 +45,10 @@ func _physics_process(_delta: float) -> void:
 	if dead:
 		return
 	
+	if $AnimatedSprite.animation == "camp":
+		$AttackQueue.stop()
+		return
+		
 	for anim in Globals.attack_anims:
 		if $AnimatedSprite.animation == anim:
 			return
@@ -46,10 +56,10 @@ func _physics_process(_delta: float) -> void:
 	var velocity = Vector2.ZERO
 	var target = get_nearest_enemy()
 	
-	if target and get_in_range().size() == 0:
+	if target and !is_in_range(target):
 		$AnimatedSprite.play("run")
 		velocity = (target.position - self.position).normalized() * speed
-	elif target and get_in_range().size() > 0:
+	elif target and is_in_range(target):
 		$AnimatedSprite.play("combat")
 	elif $AnimatedSprite.animation == "run":
 		$AnimatedSprite.play("idle")
@@ -72,26 +82,32 @@ func get_nearest_enemy() -> Node2D:
 	var enemies = get_tree().get_nodes_in_group("Enemies")
 	var nearest = null
 	var nearest_distance = 999999999999999999
+	var num_dead_enemies = 0
 	for enemy in enemies:
 		if !enemy.dead:
 			var distance = self.position.distance_to(enemy.position)
 			if distance < nearest_distance:
 				nearest = enemy
 				nearest_distance = distance
+		else:
+			num_dead_enemies += 1
+	
+	if enemies.size() == num_dead_enemies:
+		nearest = get_tree().get_nodes_in_group("Goal").front()
+	
 	return nearest
 
-func get_in_range() -> Array:
-	var not_dead = []
-	for enemy in in_range:
-		if "dead" in enemy and !enemy.dead \
-		and "move_away_from_player" in enemy and !enemy.move_away_from_player:
-			not_dead.append(enemy)
-	return not_dead
-
+func is_in_range(unit) -> bool:
+	if in_range.has(unit):
+		if "dead" in unit and !unit.dead \
+		and "move_away_from_player" in unit and !unit.move_away_from_player:
+			return true
+	return false
+	
 func get_target() -> Node2D:
-	var in_range_not_dead = get_in_range()
-	if in_range_not_dead.size() > 0:
-		return in_range_not_dead.front()
+	var nearest = get_nearest_enemy()
+	if is_in_range(nearest):
+		return nearest
 	return null
 
 func die() -> void:
@@ -103,7 +119,15 @@ func animation_finished() -> void:
 	for anim in Globals.attack_anims:
 		if $AnimatedSprite.animation == anim:
 			$AnimatedSprite.play("idle")
+	
+	if $AnimatedSprite.animation == "camp":
+		# win the level
+		pass
 		
+	if $AnimatedSprite.animation == "die":
+		# lose the level
+		pass
+
 func input_event(_vp, event: InputEvent, _idx) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		if spell_manager.active_spell_can_target(self):

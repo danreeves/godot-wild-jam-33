@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/Animation/Hero_Animation.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Units/Player.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Systems/Health.tscn" type="PackedScene" id=5]
 [ext_resource path="res://water.png" type="Texture" id=6]
 [ext_resource path="res://fire.png" type="Texture" id=7]
+[ext_resource path="res://Systems/Attacks/Camp.tscn" type="PackedScene" id=8]
 [ext_resource path="res://grass.png" type="Texture" id=9]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Systems/SpellManager.tscn" type="PackedScene" id=11]
@@ -56,6 +57,8 @@ element = 3
 [node name="GrassAttack" parent="AttackQueue" instance=ExtResource( 3 )]
 sprite = ExtResource( 9 )
 element = 2
+
+[node name="Camp" parent="AttackQueue" instance=ExtResource( 8 )]
 
 [node name="SpellManager" parent="." instance=ExtResource( 11 )]
 
