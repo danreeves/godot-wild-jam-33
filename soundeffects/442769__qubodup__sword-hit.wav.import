@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/442769__qubodup__sword-hit.wav-6b46c7ea8145c29a3284b828d457f456.sample"
+
+[deps]
+
+source_file="res://soundeffects/442769__qubodup__sword-hit.wav"
+dest_files=[ "res://.import/442769__qubodup__sword-hit.wav-6b46c7ea8145c29a3284b828d457f456.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

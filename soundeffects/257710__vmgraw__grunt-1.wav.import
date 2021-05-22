@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/257710__vmgraw__grunt-1.wav-bb450d6673d5384672073b3349f93116.sample"
+
+[deps]
+
+source_file="res://soundeffects/257710__vmgraw__grunt-1.wav"
+dest_files=[ "res://.import/257710__vmgraw__grunt-1.wav-bb450d6673d5384672073b3349f93116.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

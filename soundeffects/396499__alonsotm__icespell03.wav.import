@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/396499__alonsotm__icespell03.wav-f3e7a2ce11213baa0e11c0386402ac8e.sample"
+
+[deps]
+
+source_file="res://soundeffects/396499__alonsotm__icespell03.wav"
+dest_files=[ "res://.import/396499__alonsotm__icespell03.wav-f3e7a2ce11213baa0e11c0386402ac8e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
