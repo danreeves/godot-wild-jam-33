@@ -1,8 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/ManaBar.gd" type="Script" id=1]
+[ext_resource path="res://PixelatedPusab.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://health.png" type="Texture" id=3]
 [ext_resource path="res://mana.png" type="Texture" id=4]
+[ext_resource path="res://assets/Art/Hero/hero_Camp4.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+use_filter = true
+extra_spacing_top = -15
+extra_spacing_space = -10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+use_filter = true
+font_data = ExtResource( 2 )
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -52,3 +71,178 @@ alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" type="VBoxContainer" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.0
+margin_top = 50.0
+margin_right = 150.0
+margin_bottom = 663.0
+rect_scale = Vector2( 1, 0.998431 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PauseMenu"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.94902, 0.803922, 0.027451, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 6
+custom_constants/shadow_offset_y = 6
+bbcode_enabled = true
+bbcode_text = "[wave amp=13 rate=13][center] MENU"
+text = " MENU"
+fit_content_height = true
+scroll_active = false
+
+[node name="PauseMenuResumeButton" type="Button" parent="Control/PauseMenu"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
+text = "RESUME"
+flat = true
+
+[node name="PauseMenuQuitButton" type="Button" parent="Control/PauseMenu"]
+margin_top = 208.0
+margin_right = 300.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
+text = "QUIT"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+margin_left = 364.997
+margin_top = 279.593
+margin_right = 664.997
+margin_bottom = 580.593
+rect_min_size = Vector2( 300, 301 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VictoryMenu" type="VBoxContainer" parent="Control2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.0
+margin_top = 50.0
+margin_right = 150.0
+margin_bottom = 500.0
+rect_scale = Vector2( 1, 0.998431 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control2/VictoryMenu"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.94902, 0.803922, 0.027451, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 6
+custom_constants/shadow_offset_y = 6
+bbcode_enabled = true
+bbcode_text = "[wave amp=13 rate=13][center] YOU WIN!"
+text = " YOU WIN!"
+fit_content_height = true
+scroll_active = false
+
+[node name="VictoryMenuNextLevelButton" type="Button" parent="Control2/VictoryMenu"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
+text = "NEXT LEVEL"
+flat = true
+
+[node name="VictoryMenuQuitButton" type="Button" parent="Control2/VictoryMenu"]
+margin_top = 208.0
+margin_right = 300.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
+text = "QUIT"
+flat = true
+
+[node name="Control3" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DefeatMenu" type="VBoxContainer" parent="Control3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.0
+margin_top = 50.0
+margin_right = 150.0
+margin_bottom = 500.0
+rect_scale = Vector2( 1, 0.998431 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control3/DefeatMenu"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.94902, 0.803922, 0.027451, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 6
+custom_constants/shadow_offset_y = 6
+bbcode_enabled = true
+bbcode_text = "[wave amp=13 rate=13][center] DEFEAT"
+text = " DEFEAT"
+fit_content_height = true
+scroll_active = false
+
+[node name="DefeatMenuRestartButton" type="Button" parent="Control3/DefeatMenu"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
+text = "RESTART"
+flat = true
+
+[node name="DefeatMenuQuitButton" type="Button" parent="Control3/DefeatMenu"]
+margin_top = 208.0
+margin_right = 300.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
+text = "QUIT"
+flat = true
