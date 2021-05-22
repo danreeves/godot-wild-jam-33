@@ -14,7 +14,6 @@ position = Vector2( 3.77972, -1.25992 )
 rotation = 0.000606748
 frames = ExtResource( 1 )
 animation = "run"
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 9.9473, 23.8409 )
