@@ -7,6 +7,8 @@ export var move_away_from_player = false
 
 onready var spell_manager = get_target().find_node("SpellManager")
 
+export var dead = false
+
 func _ready() -> void:
 	var _err1 = $InCombat.connect("body_entered", self, "unit_enter_range")
 	var _err2 = $InCombat.connect("body_exited", self, "unit_leave_range")
@@ -28,13 +30,20 @@ func unit_leave_range(unit: Node2D) -> void:
 		$AttackQueue.stop()
 
 func die() -> void:
-	queue_free()
+	dead = true
+	$AttackQueue.stop()
+	$AnimatedSprite.play("die")
+	$AnimatedSprite.flip_h = false
+	set_element(Globals.Elements.None)
 
 func is_element(elem) -> bool:
 	return element == elem
 
 func _process(_delta: float) -> void:
-	$AnimatedSprite.flip_h = move_away_from_player
+	if dead: 
+		return
+		
+	$AnimatedSprite.flip_h = !move_away_from_player
 	
 	# bobbus wrote this code
 	var size = 1 + position.y * 0.002

@@ -19,11 +19,11 @@ func _process(_delta: float) -> void:
 		$AttackQueue.stop()
 		return
 		
-	if !unit_in_range_last_frame and in_range.size() > 0:
+	if !unit_in_range_last_frame and get_in_range().size() > 0:
 		$AttackQueue.start_timer()
 		unit_in_range_last_frame = true
-	
-	if in_range.size() == 0:
+		
+	if get_in_range().size() == 0:
 		$AttackQueue.stop()
 		unit_in_range_last_frame = false
 	
@@ -43,9 +43,11 @@ func _physics_process(_delta: float) -> void:
 		
 	var velocity = Vector2.ZERO
 	var target = get_nearest_enemy()
-	if target and in_range.size() == 0:
+	if target and get_in_range().size() == 0:
 		$AnimatedSprite.play("run")
 		velocity = (target.position - self.position).normalized() * speed
+	elif target and get_in_range().size() > 0:
+		$AnimatedSprite.play("combat")
 	elif $AnimatedSprite.animation == "run":
 		$AnimatedSprite.play("idle")
 	velocity = move_and_slide(velocity)
@@ -64,15 +66,24 @@ func get_nearest_enemy() -> Node2D:
 	var nearest = null
 	var nearest_distance = 1000
 	for enemy in enemies:
-		var distance = self.position.distance_to(enemy.position)
-		if distance < nearest_distance:
-			nearest = enemy
-			nearest_distance = distance
+		if !enemy.dead:
+			var distance = self.position.distance_to(enemy.position)
+			if distance < nearest_distance:
+				nearest = enemy
+				nearest_distance = distance
 	return nearest
 
+func get_in_range() -> Array:
+	var not_dead = []
+	for enemy in in_range:
+		if !enemy.dead:
+			not_dead.append(enemy)
+	return not_dead
+
 func get_target() -> Node2D:
-	if in_range.size() > 0:
-		return in_range.front()
+	var in_range_not_dead = get_in_range()
+	if in_range_not_dead.size() > 0:
+		return in_range_not_dead.front()
 	return null
 
 func die() -> void:
