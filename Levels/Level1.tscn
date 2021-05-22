@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
-[ext_resource path="res://assets/Animation/Ghost_Animation.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Units/DogAnimatedSprite.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Units/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Units/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Units/DonkAnimatedSprite.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
@@ -24,49 +25,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Enemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( -194.962, -0.191315 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy"]
-scale = Vector2( 0.5, 0.5 )
-frames = ExtResource( 3 )
-animation = "idle"
-frame = 6
-playing = true
-flip_h = true
-
 [node name="Enemy2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 154.474, -1.34589 )
+position = Vector2( 292, 6 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy2"]
-scale = Vector2( 0.5, 0.5 )
-frames = ExtResource( 3 )
-animation = "idle"
-frame = 6
-playing = true
-flip_h = true
+[node name="AnimatedSprite" parent="Enemy2" instance=ExtResource( 3 )]
 
-[node name="Enemy3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 601.895, -110.219 )
+[node name="Enemy" parent="." instance=ExtResource( 5 )]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy3"]
-scale = Vector2( 0.5, 0.5 )
-frames = ExtResource( 3 )
-animation = "idle"
-frame = 11
-playing = true
-flip_h = true
-
-[node name="Enemy4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 611.794, 137.269 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy4"]
-scale = Vector2( 0.5, 0.5 )
-frames = ExtResource( 3 )
-animation = "idle"
-frame = 4
-playing = true
-flip_h = true
+[node name="AnimatedSprite" parent="Enemy" instance=ExtResource( 6 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

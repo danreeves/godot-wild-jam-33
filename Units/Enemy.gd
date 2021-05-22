@@ -16,6 +16,7 @@ func _ready() -> void:
 	var _err4 = $ClickArea.connect("input_event", self, "input_event")
 	move_child($AnimatedSprite, 1)
 	set_element(element)
+	$AnimatedSprite.play("idle")
 
 func get_target() -> Node2D:
 	var players = get_tree().get_nodes_in_group("Player")
@@ -95,9 +96,14 @@ func input_event(_vp, event: InputEvent, _idx) -> void:
 
 func set_element(ele):
 	element = ele
+	
+	var property = "modulate"
+	if "_modulate" in $AnimatedSprite:
+		property = "_modulate"
+	
 	$ColorTween.interpolate_property(
 		$AnimatedSprite, 
-		"modulate", 
+		property, 
 		$AnimatedSprite.modulate, 
 		Globals.ElementColor[ele], 
 		0.2, 

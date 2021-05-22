@@ -13,6 +13,7 @@ func _ready() -> void:
 	var _err2 = $InCombat.connect("body_exited", self, "unit_leave_range")
 	var _err3 = $AnimatedSprite.connect("animation_finished", self, "animation_finished")
 	var _err4 = $ClickArea.connect("input_event", self, "input_event")
+	$AnimatedSprite.play("idle")
 
 func _process(_delta: float) -> void:
 	if dead:
@@ -44,6 +45,7 @@ func _physics_process(_delta: float) -> void:
 		
 	var velocity = Vector2.ZERO
 	var target = get_nearest_enemy()
+	
 	if target and get_in_range().size() == 0:
 		$AnimatedSprite.play("run")
 		velocity = (target.position - self.position).normalized() * speed
