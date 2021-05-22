@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/belch.mp3-6fecb2f0a8d94451563e29664da9473b.mp3str"
+
+[deps]
+
+source_file="res://soundeffects/belch.mp3"
+dest_files=[ "res://.import/belch.mp3-6fecb2f0a8d94451563e29664da9473b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/walking-grass.mp3-276927e9d8db50f8ac4913e772c03ac6.mp3str"
+
+[deps]
+
+source_file="res://soundeffects/walking-grass.mp3"
+dest_files=[ "res://.import/walking-grass.mp3-276927e9d8db50f8ac4913e772c03ac6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
