@@ -29,6 +29,10 @@ func _process(_delta: float) -> void:
 	
 	if !get_nearest_enemy():
 		$AnimatedSprite.play("camp")
+		
+	# bobbus wrote this code
+	var size = 1 + position.y * 0.002
+	scale = Vector2(size, size)
 	
 func _physics_process(_delta: float) -> void:
 	if dead:

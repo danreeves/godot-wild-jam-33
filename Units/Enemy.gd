@@ -36,6 +36,10 @@ func is_element(elem) -> bool:
 func _process(_delta: float) -> void:
 	$AnimatedSprite.flip_h = move_away_from_player
 	
+	# bobbus wrote this code
+	var size = 1 + position.y * 0.002
+	scale = Vector2(size, size)
+	
 	if get_target().dead:
 		$AttackQueue.stop()
 
