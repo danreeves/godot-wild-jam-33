@@ -31,11 +31,7 @@ position = Vector2( -194.962, -0.191315 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-<<<<<<< HEAD
-frame = 15
-=======
-frame = 2
->>>>>>> c793c50f4f5f4d23af402ac75103fda1e4190a2d
+frame = 1
 playing = true
 flip_h = true
 
@@ -46,11 +42,7 @@ position = Vector2( 154.474, -1.34589 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-<<<<<<< HEAD
-frame = 3
-=======
-frame = 2
->>>>>>> c793c50f4f5f4d23af402ac75103fda1e4190a2d
+frame = 1
 playing = true
 flip_h = true
 
@@ -61,11 +53,7 @@ position = Vector2( 601.895, -110.219 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-<<<<<<< HEAD
-frame = 15
-=======
-frame = 2
->>>>>>> c793c50f4f5f4d23af402ac75103fda1e4190a2d
+frame = 1
 playing = true
 flip_h = true
 
@@ -76,11 +64,7 @@ position = Vector2( 611.794, 137.269 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 4 )
 animation = "idle"
-<<<<<<< HEAD
-frame = 15
-=======
-frame = 2
->>>>>>> c793c50f4f5f4d23af402ac75103fda1e4190a2d
+frame = 1
 playing = true
 flip_h = true
 
