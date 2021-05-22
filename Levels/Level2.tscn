@@ -1,38 +1,21 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
 [ext_resource path="res://Units/DogAnimatedSprite.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Units/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Units/Enemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/Level2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=6]
 [ext_resource path="res://Units/Campfire.tscn" type="PackedScene" id=7]
-
-[sub_resource type="GDScript" id=2]
-script/source = "extends \"res://Levels/Level.gd\"
-
-
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
-"
+[ext_resource path="res://UI/TitleScreen.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Units/DonkAnimatedSprite.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
 
 [node name="World" type="Node"]
-script = SubResource( 2 )
-next_scene = ExtResource( 6 )
+script = ExtResource( 6 )
+next_scene = ExtResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -712.764
@@ -47,12 +30,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Enemy2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 193, -2.19452 )
+
+[node name="AnimatedSprite" parent="Enemy2" instance=ExtResource( 9 )]
+
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
 
 [node name="AnimatedSprite" parent="Enemy" instance=ExtResource( 3 )]
 
 [node name="Campfire" parent="." instance=ExtResource( 7 )]
-position = Vector2( 268, -2 )
+position = Vector2( 437.492, -10.9797 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

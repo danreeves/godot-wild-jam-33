@@ -1,11 +1,13 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://UI/ManaBar.gd" type="Script" id=1]
 [ext_resource path="res://PixelatedPusab.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://health.png" type="Texture" id=3]
 [ext_resource path="res://mana.png" type="Texture" id=4]
 [ext_resource path="res://UI/Pause.gd" type="Script" id=5]
+[ext_resource path="res://UI/Defeat.gd" type="Script" id=6]
 [ext_resource path="res://assets/Animation/Hero_Animation.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://UI/Victory.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -161,6 +163,7 @@ frame = 1
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -232,6 +235,7 @@ animation = "drink"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
