@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/389454__lzmraul__footsteps-on-dirt.wav-2d3785554382c97eb8e8135c77dac859.sample"
+
+[deps]
+
+source_file="res://soundeffects/389454__lzmraul__footsteps-on-dirt.wav"
+dest_files=[ "res://.import/389454__lzmraul__footsteps-on-dirt.wav-2d3785554382c97eb8e8135c77dac859.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

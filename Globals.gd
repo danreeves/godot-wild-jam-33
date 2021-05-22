@@ -13,3 +13,12 @@ const ElementColor = {
 	Elements.Grass: Color.forestgreen,
 	Elements.Water: Color.dodgerblue,
 }
+
+const ElementAnim = {
+	Elements.None: "attack",
+	Elements.Fire: "fire",
+	Elements.Water: "water",
+	Elements.Grass: "grass",
+}
+
+const attack_anims = ["attack", "fire", "water", "grass"]
