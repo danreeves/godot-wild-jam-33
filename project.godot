@@ -46,6 +46,7 @@ _global_script_class_icons={
 
 config/name="godot-wild-jam-33"
 run/main_scene="res://UI/TitleScreen.tscn"
+boot_splash/image="res://assets/Art/Decor/decor_title.png"
 config/icon="res://icon.png"
 
 [autoload]
