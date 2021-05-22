@@ -69,7 +69,12 @@ func on_timer_end() -> void:
 		var target = get_parent().get_target()
 		if target:
 			current_attack.execute(target, get_parent())
-	get_parent().find_node("AnimatedSprite").play("attack")
+			
+	if "element" in current_attack:
+		var anim = Globals.ElementAnim[current_attack.element]
+		get_parent().find_node("AnimatedSprite").play(anim)
+	else:
+		get_parent().find_node("AnimatedSprite").play("attack")
 	$Duration.start()
 
 func on_duration_end() -> void:

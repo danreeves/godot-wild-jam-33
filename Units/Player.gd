@@ -33,13 +33,14 @@ func _process(_delta: float) -> void:
 	# bobbus wrote this code
 	var size = 1 + position.y * 0.002
 	scale = Vector2(size, size)
-	
+
 func _physics_process(_delta: float) -> void:
 	if dead:
 		return
-		
-	if $AnimatedSprite.animation == "attack":
-		return
+	
+	for anim in Globals.attack_anims:
+		if $AnimatedSprite.animation == anim:
+			return
 		
 	var velocity = Vector2.ZERO
 	var target = get_nearest_enemy()
@@ -97,8 +98,9 @@ func die() -> void:
 	$AnimatedSprite.play("die")
 
 func animation_finished() -> void:
-	if $AnimatedSprite.animation == "attack":
-		$AnimatedSprite.play("idle")
+	for anim in Globals.attack_anims:
+		if $AnimatedSprite.animation == anim:
+			$AnimatedSprite.play("idle")
 		
 func input_event(_vp, event: InputEvent, _idx) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
