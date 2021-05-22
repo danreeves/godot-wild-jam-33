@@ -5,13 +5,11 @@ enum Elements {
 	Fire,
 	Grass,
 	Water,
-	Air,
 }
 
 const ElementColor = {
 	Elements.None: Color.beige,
-	Elements.Fire: Color.red,
-	Elements.Grass: Color.greenyellow,
+	Elements.Fire: Color.firebrick,
+	Elements.Grass: Color.forestgreen,
 	Elements.Water: Color.dodgerblue,
-	Elements.Air: Color.aliceblue,
 }
