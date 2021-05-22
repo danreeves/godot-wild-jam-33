@@ -3,6 +3,33 @@ extends Control
 func _ready() -> void:
 	var _err1 = find_node("TitleButtonQuit").connect("button_up", self, "quit")
 	var _err2 = find_node("TitleButtonPlay").connect("button_up", self, "play")
+	$Title.rect_position = Vector2($Title.rect_position.x, -$Title.rect_size.y)
+	$VBoxContainer.modulate.a = 0.0
+	var _err3 = $Tween.connect("tween_all_completed", self, "animate_menu")
+	call_deferred("animate_title")
+
+func animate_title():
+	$Tween.interpolate_property(
+		$Title, 
+		"rect_position", 
+		$Title.rect_position, 
+		Vector2($Title.rect_position.x, 40), 
+		2.0, 
+		Tween.TRANS_ELASTIC
+	)
+	$Tween.start()
+
+func animate_menu():
+	$Tween2.interpolate_property(
+		$VBoxContainer, 
+		"modulate", 
+		$VBoxContainer.modulate, 
+		Color(1, 1, 1, 1), 
+		.5, 
+		Tween.TRANS_LINEAR
+	)
+	$Tween2.start()
+
 	
 func quit():
 	get_tree().quit()
