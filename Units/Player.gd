@@ -16,6 +16,10 @@ func _ready() -> void:
 	$AnimatedSprite.play("idle")
 
 func _process(_delta: float) -> void:
+	if Input.is_action_pressed("ui_cancel"):
+		get_node("HUD").find_node("Pause").visible = true
+		get_tree().paused = true
+	
 	if dead:
 		$AttackQueue.stop()
 		return
@@ -121,11 +125,11 @@ func animation_finished() -> void:
 			$AnimatedSprite.play("idle")
 	
 	if $AnimatedSprite.animation == "camp":
-		# win the level
+		get_node("HUD").find_node("Victory").visible = true
 		pass
 		
 	if $AnimatedSprite.animation == "die":
-		# lose the level
+		get_node("HUD").find_node("Defeat").visible = true
 		pass
 
 func input_event(_vp, event: InputEvent, _idx) -> void:

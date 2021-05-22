@@ -1,6 +1,7 @@
 extends Control
 
 func _ready() -> void:
+	print("onready")
 	var _err1 = find_node("TitleButtonQuit").connect("button_up", self, "quit")
 	var _err2 = find_node("TitleButtonPlay").connect("button_up", self, "play")
 	$Title.rect_position = Vector2($Title.rect_position.x, -$Title.rect_size.y)

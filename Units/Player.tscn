@@ -68,3 +68,4 @@ element = 2
 shape = SubResource( 3 )
 
 [node name="HUD" parent="." instance=ExtResource( 10 )]
+pause_mode = 2
