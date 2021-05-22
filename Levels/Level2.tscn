@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Units/Campfire.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/TitleScreen.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Units/DonkAnimatedSprite.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Props/StartBarrier.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
@@ -60,3 +61,5 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -486.817, -2.19452 )
+
+[node name="StartBarrier" parent="." instance=ExtResource( 10 )]

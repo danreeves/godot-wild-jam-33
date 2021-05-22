@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Units/Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Level2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Units/Campfire.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PixelatedPusab.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Props/StartBarrier.tscn" type="PackedScene" id=9]
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends \"res://Levels/Level.gd\"
@@ -30,6 +32,9 @@ func _ready() -> void:
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
 
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 8 )
+
 [node name="World" type="Node"]
 script = SubResource( 2 )
 next_scene = ExtResource( 6 )
@@ -48,11 +53,12 @@ __meta__ = {
 }
 
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 98.7766, 13.4696 )
 
 [node name="AnimatedSprite" parent="Enemy" instance=ExtResource( 3 )]
 
 [node name="Campfire" parent="." instance=ExtResource( 7 )]
-position = Vector2( 268, -2 )
+position = Vector2( 737.189, -4.245 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -72,3 +78,16 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -486.817, -2.19452 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -344.466
+margin_top = -146.041
+margin_right = -293.466
+margin_bottom = -130.041
+custom_fonts/font = SubResource( 3 )
+text = "Hello"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartBarrier" parent="." instance=ExtResource( 9 )]
