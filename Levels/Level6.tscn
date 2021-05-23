@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -10,10 +10,12 @@
 [ext_resource path="res://Levels/Credits.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Units/DonkAnimatedSprite.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Props/StartBarrier.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/Art/Decor/decor_Fire1_1.png" type="Texture" id=11]
-[ext_resource path="res://assets/Art/Decor/decor_Shrub.png" type="Texture" id=12]
-[ext_resource path="res://assets/Art/Decor/decor_Tree.png" type="Texture" id=13]
-[ext_resource path="res://assets/Art/Decor/decor_Beer2.png" type="Texture" id=14]
+[ext_resource path="res://assets/Art/Decor/decor_Beer2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/Art/Decor/decor_Shrub.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/Art/Decor/decor_Flowers.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/Art/Decor/decor_Tree.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/Art/Decor/decor_Fire1_1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/Art/Decor/decor_Fire2_1.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
@@ -22,7 +24,10 @@ extents = Vector2( 9999, 10 )
 script = ExtResource( 6 )
 next_scene = ExtResource( 8 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( 194.94, 42.3785 )
+
+[node name="TextureRect" type="TextureRect" parent="YSort"]
 margin_left = -712.764
 margin_top = -294.156
 margin_right = 99286.2
@@ -35,194 +40,193 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Enemy2" parent="." instance=ExtResource( 5 )]
+[node name="Enemy2" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 359.717, -15.5716 )
 
-[node name="AnimatedSprite" parent="Enemy2" instance=ExtResource( 9 )]
+[node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 9 )]
 
-[node name="Enemy3" parent="." instance=ExtResource( 5 )]
+[node name="Enemy3" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 1392.05, -130.941 )
 
-[node name="AnimatedSprite" parent="Enemy3" instance=ExtResource( 9 )]
+[node name="AnimatedSprite" parent="YSort/Enemy3" instance=ExtResource( 9 )]
 
-[node name="Enemy5" parent="." instance=ExtResource( 5 )]
+[node name="Enemy5" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 1255.7, 147.744 )
 
-[node name="AnimatedSprite" parent="Enemy5" instance=ExtResource( 9 )]
+[node name="AnimatedSprite" parent="YSort/Enemy5" instance=ExtResource( 9 )]
 
-[node name="Enemy4" parent="." instance=ExtResource( 5 )]
+[node name="Enemy4" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 1555.37, -79.9989 )
 
-[node name="AnimatedSprite" parent="Enemy4" instance=ExtResource( 9 )]
+[node name="AnimatedSprite" parent="YSort/Enemy4" instance=ExtResource( 9 )]
 
-[node name="Enemy" parent="." instance=ExtResource( 5 )]
+[node name="Enemy" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 2912.7, -144.503 )
 
-[node name="AnimatedSprite" parent="Enemy" instance=ExtResource( 3 )]
+[node name="AnimatedSprite" parent="YSort/Enemy" instance=ExtResource( 3 )]
 
-[node name="Enemy6" parent="." instance=ExtResource( 5 )]
+[node name="Enemy6" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 2638.7, -147.503 )
 
-[node name="AnimatedSprite" parent="Enemy6" instance=ExtResource( 3 )]
+[node name="AnimatedSprite" parent="YSort/Enemy6" instance=ExtResource( 3 )]
 
-[node name="Campfire" parent="." instance=ExtResource( 7 )]
-position = Vector2( 4089.75, -137.751 )
+[node name="Campfire" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 3769.75, -137.751 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="YSort"]
 current = true
 script = ExtResource( 1 )
 
-[node name="Horizon" type="StaticBody2D" parent="."]
+[node name="Horizon" type="StaticBody2D" parent="YSort"]
 position = Vector2( -14.4785, -200.268 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Horizon"]
 shape = SubResource( 1 )
 
-[node name="Horizon2" type="StaticBody2D" parent="."]
+[node name="Horizon2" type="StaticBody2D" parent="YSort"]
 position = Vector2( 13.8058, 216.925 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Horizon2"]
 shape = SubResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Player" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -486.817, -2.19452 )
 
-[node name="StartBarrier" parent="." instance=ExtResource( 10 )]
+[node name="StartBarrier" parent="YSort" instance=ExtResource( 10 )]
 
-[node name="decor_Tree" type="Sprite" parent="."]
-position = Vector2( -355.294, -194.001 )
-scale = Vector2( -0.428571, 0.352 )
-texture = ExtResource( 13 )
+[node name="decor_Tree" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( -403.963, -96.669 )
+scale = Vector2( -0.504132, 0.32436 )
 
-[node name="decor_Tree2" type="Sprite" parent="."]
-position = Vector2( -273.041, 33.2688 )
-scale = Vector2( 0.346154, 0.346154 )
-texture = ExtResource( 13 )
+[node name="decor_Tree2" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( -314.007, 147.11 )
+scale = Vector2( 0.324125, 0.319719 )
 
-[node name="decor_Tree3" type="Sprite" parent="."]
-position = Vector2( -113.013, 186.217 )
-scale = Vector2( 0.565217, 0.184211 )
-texture = ExtResource( 13 )
+[node name="decor_Tree3" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( -206.16, 232.348 )
+scale = Vector2( 0.442193, 0.15572 )
 
-[node name="decor_Shrub" type="Sprite" parent="."]
-position = Vector2( 136.503, 37.6146 )
-scale = Vector2( -0.400005, 0.590917 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( -105.749, -101.749 )
+scale = Vector2( 0.353389, 0.41671 )
 
-[node name="decor_Shrub2" type="Sprite" parent="."]
-position = Vector2( 21.1337, -145.179 )
-scale = Vector2( 0.437499, 0.481474 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub2" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 56.9637, -156.612 )
+scale = Vector2( -0.288405, 0.562463 )
 
-[node name="decor_Shrub3" type="Sprite" parent="."]
-position = Vector2( 238.565, -224.757 )
-scale = Vector2( -0.511436, 0.610191 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub3" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 171.202, -143.899 )
+scale = Vector2( 0.941065, 0.465114 )
 
-[node name="decor_Shrub4" type="Sprite" parent="."]
-position = Vector2( 349.263, 117.025 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub4" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 115.01, -97.5117 )
+scale = Vector2( -0.336019, 0.423815 )
 
-[node name="decor_Shrub5" type="Sprite" parent="."]
-position = Vector2( 348.477, -183.898 )
-scale = Vector2( 0.789713, 0.418165 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub5" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 175.944, -122.71 )
+scale = Vector2( 0.340087, 0.656742 )
 
-[node name="decor_Shrub6" type="Sprite" parent="."]
-position = Vector2( 266.78, -139.186 )
-scale = Vector2( -0.560147, 0.499928 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub6" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 20.4949, 126.981 )
+scale = Vector2( -0.663792, 0.587096 )
 
-[node name="decor_Shrub7" type="Sprite" parent="."]
-position = Vector2( 935.72, 51.772 )
-scale = Vector2( 1.07212, 1.35175 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub7" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 192.85, 174.857 )
+scale = Vector2( 0.737549, 0.650446 )
 
-[node name="decor_Shrub8" type="Sprite" parent="."]
-position = Vector2( 831.848, 165.628 )
-scale = Vector2( -0.818287, 0.860929 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub8" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 275.178, 216.755 )
+scale = Vector2( -0.333507, 0.810345 )
 
-[node name="decor_Shrub9" type="Sprite" parent="."]
-position = Vector2( 1101.41, -242.821 )
-scale = Vector2( 1.11393, 0.926884 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub9" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 902.04, 156.142 )
 
-[node name="decor_Shrub10" type="Sprite" parent="."]
-position = Vector2( 957.484, -178.646 )
-scale = Vector2( -0.75699, 0.675068 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub10" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 800.263, 224.978 )
+scale = Vector2( -1.36918, 0.787296 )
 
-[node name="decor_Shrub11" type="Sprite" parent="."]
-position = Vector2( 1119.33, -144.253 )
-scale = Vector2( 0.876448, 0.564092 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub11" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 856.637, -163.874 )
+scale = Vector2( 1.26005, 0.686282 )
 
-[node name="decor_Shrub12" type="Sprite" parent="."]
-position = Vector2( 2052.84, 84.0625 )
-scale = Vector2( 1.18643, 0.514061 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub12" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 883.302, -109.767 )
+scale = Vector2( 0.867714, 0.397938 )
 
-[node name="decor_Shrub13" type="Sprite" parent="."]
-position = Vector2( 1742.69, -254.555 )
-scale = Vector2( -0.668553, 1.37655 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub13" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 720.934, -121.244 )
+scale = Vector2( -0.897828, 0.564197 )
 
-[node name="decor_Shrub14" type="Sprite" parent="."]
-position = Vector2( 401.993, 179.028 )
-scale = Vector2( -0.653333, 0.791045 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub14" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 1727.42, -155.651 )
+scale = Vector2( -0.549117, 1.43039 )
 
-[node name="decor_Fire1_1" type="Sprite" parent="."]
-position = Vector2( 1487.44, -140.486 )
-scale = Vector2( -0.560976, 0.526316 )
-texture = ExtResource( 11 )
+[node name="decor_Shrub15" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 2013, 135.434 )
+scale = Vector2( 1.08691, 0.548827 )
 
-[node name="decor_Fire1_2" type="Sprite" parent="."]
-position = Vector2( 1333.11, 165.168 )
-scale = Vector2( 0.468355, 0.568628 )
-texture = ExtResource( 11 )
+[node name="decor_Shrub16" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 2356.27, -178.627 )
+scale = Vector2( 0.478498, 1.09701 )
 
-[node name="decor_Beer2" type="Sprite" parent="."]
-position = Vector2( 2767.08, -134.945 )
-texture = ExtResource( 14 )
+[node name="decor_Shrub17" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 2508.88, 168.58 )
+scale = Vector2( -0.819822, 1.38293 )
 
-[node name="decor_Shrub15" type="Sprite" parent="."]
-position = Vector2( 2669, 52 )
-scale = Vector2( 0.483333, 1.04348 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub18" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 2669.28, 153.851 )
 
-[node name="decor_Shrub16" type="Sprite" parent="."]
-position = Vector2( 2360, -208 )
-scale = Vector2( -0.242424, 0.595745 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub19" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 3076.36, 101.942 )
+scale = Vector2( 0.31428, 1 )
 
-[node name="decor_Shrub17" type="Sprite" parent="."]
-position = Vector2( 2998, 7 )
-scale = Vector2( -0.276923, 1.02933 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub20" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 3176.9, -203.619 )
+scale = Vector2( 1.09503, 0.418773 )
 
-[node name="decor_Shrub18" type="Sprite" parent="."]
-position = Vector2( 3194.74, -220.068 )
-scale = Vector2( -1.51852, 0.770974 )
-texture = ExtResource( 12 )
+[node name="decor_Shrub21" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 3250.71, -145.526 )
+scale = Vector2( 0.468666, 0.734324 )
 
-[node name="decor_Shrub19" type="Sprite" parent="."]
-position = Vector2( 3315.49, -227.667 )
-scale = Vector2( 0.565084, 1.14039 )
-texture = ExtResource( 12 )
+[node name="decor_Flowers" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 423.479, 104.085 )
+scale = Vector2( 0.391172, 0.598637 )
 
-[node name="decor_Shrub20" type="Sprite" parent="."]
-position = Vector2( 3783, 86.6691 )
-scale = Vector2( 1.92579, 0.578563 )
-texture = ExtResource( 12 )
+[node name="decor_Flowers2" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 516.116, 178.533 )
+scale = Vector2( -0.480274, 0.38381 )
 
-[node name="decor_Beer3" type="Sprite" parent="."]
-position = Vector2( 4463.85, 145.599 )
-scale = Vector2( 0.816015, 0.309185 )
-texture = ExtResource( 14 )
+[node name="decor_Flowers3" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 1486.61, 143.283 )
+scale = Vector2( 0.487898, 0.434309 )
 
-[node name="decor_Shrub21" type="Sprite" parent="."]
-position = Vector2( 4440.95, -173.72 )
-scale = Vector2( -1, 0.529412 )
-texture = ExtResource( 12 )
+[node name="decor_Flowers4" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 2969.28, 192.841 )
+scale = Vector2( 0.525698, 0.467373 )
+
+[node name="decor_Beer2" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 2756.78, -166.496 )
+
+[node name="decor_Fire1_1" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 1474.53, -106.019 )
+scale = Vector2( 0.48843, 0.526856 )
+
+[node name="decor_Fire2_1" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 1329.28, 200.327 )
+scale = Vector2( 0.622032, 0.543418 )
+
+[node name="decor_Shrub22" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 3602.3, 170.012 )
+scale = Vector2( 1.36356, 0.669502 )
+
+[node name="decor_Shrub23" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 3859.41, 151.015 )
+scale = Vector2( -1.1893, 0.968957 )
+
+[node name="decor_Shrub24" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 4073.61, -126.253 )
+scale = Vector2( 0.502988, 0.966866 )
+
+[node name="decor_Shrub25" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 4331.89, 150.802 )
+scale = Vector2( -0.498891, 1.11481 )

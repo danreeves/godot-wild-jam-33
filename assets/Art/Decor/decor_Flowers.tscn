@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/Art/Decor/decor_Flowers.png" type="Texture" id=1]
+
+[node name="decor_Flowers" type="Sprite"]
+position = Vector2( 4464.01, -88.4303 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -75 )

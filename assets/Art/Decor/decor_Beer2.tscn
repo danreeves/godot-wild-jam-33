@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/Art/Decor/decor_Beer2.png" type="Texture" id=1]
+
+[node name="decor_Beer2" type="Sprite"]
+position = Vector2( 4875.46, -49.7133 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -40 )

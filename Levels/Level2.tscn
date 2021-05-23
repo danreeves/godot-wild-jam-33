@@ -18,7 +18,9 @@ extents = Vector2( 9999, 10 )
 script = ExtResource( 6 )
 next_scene = ExtResource( 8 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="YSort" type="YSort" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="YSort"]
 margin_left = -712.764
 margin_top = -294.156
 margin_right = 99286.2
@@ -31,35 +33,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Enemy2" parent="." instance=ExtResource( 5 )]
+[node name="Enemy2" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 193, -2.19452 )
 
-[node name="AnimatedSprite" parent="Enemy2" instance=ExtResource( 9 )]
+[node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 9 )]
 
-[node name="Enemy" parent="." instance=ExtResource( 5 )]
+[node name="Enemy" parent="YSort" instance=ExtResource( 5 )]
 
-[node name="AnimatedSprite" parent="Enemy" instance=ExtResource( 3 )]
+[node name="AnimatedSprite" parent="YSort/Enemy" instance=ExtResource( 3 )]
 
-[node name="Campfire" parent="." instance=ExtResource( 7 )]
+[node name="Campfire" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 437.492, -10.9797 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="YSort"]
 current = true
 script = ExtResource( 1 )
 
-[node name="Horizon" type="StaticBody2D" parent="."]
+[node name="Horizon" type="StaticBody2D" parent="YSort"]
 position = Vector2( -14.4785, -200.268 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Horizon"]
 shape = SubResource( 1 )
 
-[node name="Horizon2" type="StaticBody2D" parent="."]
+[node name="Horizon2" type="StaticBody2D" parent="YSort"]
 position = Vector2( 13.8058, 216.925 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Horizon2"]
 shape = SubResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Player" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -486.817, -2.19452 )
 
-[node name="StartBarrier" parent="." instance=ExtResource( 10 )]
+[node name="StartBarrier" parent="YSort" instance=ExtResource( 10 )]
