@@ -1,6 +1,10 @@
 extends Node
 
 var spells = [
+	Heal,
+	ToFire,
+	ToWater,
+	ToGrass,
 	Fear,
 	Haste,
 	Slow,

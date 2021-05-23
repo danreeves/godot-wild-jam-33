@@ -10,11 +10,15 @@ func next():
 	visible = false
 	var world = get_tree().get_root().get_node("World")
 	if "next_scene" in world and world.next_scene:
-		var shop = ShopScene.instance()
-		Globals.next_scene = world.next_scene
-		var err = get_tree().change_scene("res://Levels/Store.tscn")
-		if err:
-			print(err)
+		if SpellStore.purchased.size() >= SpellStore.spells.size():
+			var err = get_tree().change_scene_to(world.next_scene)
+			if err:
+				print(err)
+		else:
+			Globals.next_scene = world.next_scene
+			var err = get_tree().change_scene("res://Levels/Store.tscn")
+			if err:
+				print(err)
 			
 	else:
 		var err = get_tree().change_scene("res://UI/TitleScreen.tscn")

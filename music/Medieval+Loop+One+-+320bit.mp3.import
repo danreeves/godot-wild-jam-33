@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Medieval+Loop+One+-+320bit.mp3-aea8e06ad7fad6c044271506837600df.mp3str"
+
+[deps]
+
+source_file="res://music/Medieval+Loop+One+-+320bit.mp3"
+dest_files=[ "res://.import/Medieval+Loop+One+-+320bit.mp3-aea8e06ad7fad6c044271506837600df.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
