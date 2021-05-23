@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://assets/Art/Decor/decor_Shrub.png" type="Texture" id=11]
 [ext_resource path="res://assets/Art/Decor/decor_Tree.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/Art/Decor/decor_Shrub.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Systems/Attacks/BasicAttack.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Systems/AttackQueue.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
@@ -41,19 +43,35 @@ position = Vector2( 1128.9, 126.621 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 9 )]
 
+[node name="AttackQueue" parent="YSort/Enemy2" instance=ExtResource( 15 )]
+
+[node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 14 )]
+
 [node name="Enemy" parent="YSort" instance=ExtResource( 5 )]
 
 [node name="AnimatedSprite" parent="YSort/Enemy" instance=ExtResource( 3 )]
+
+[node name="AttackQueue" parent="YSort/Enemy" instance=ExtResource( 15 )]
+
+[node name="BasicAttack" parent="YSort/Enemy/AttackQueue" instance=ExtResource( 14 )]
 
 [node name="Enemy3" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 354.578, 160.362 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy3" instance=ExtResource( 3 )]
 
+[node name="AttackQueue" parent="YSort/Enemy3" instance=ExtResource( 15 )]
+
+[node name="BasicAttack" parent="YSort/Enemy3/AttackQueue" instance=ExtResource( 14 )]
+
 [node name="Enemy4" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 1021.89, -147.201 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy4" instance=ExtResource( 3 )]
+
+[node name="AttackQueue" parent="YSort/Enemy4" instance=ExtResource( 15 )]
+
+[node name="BasicAttack" parent="YSort/Enemy4/AttackQueue" instance=ExtResource( 14 )]
 
 [node name="Campfire" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 1441.53, -121.004 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Units/DonkAnimatedSprite.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Props/StartBarrier.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/Art/Decor/decor_Tree.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Systems/Attacks/BasicAttack.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Systems/AttackQueue.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
@@ -39,30 +41,54 @@ position = Vector2( 177.898, -2.19452 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 9 )]
 
+[node name="AttackQueue" parent="YSort/Enemy2" instance=ExtResource( 13 )]
+
+[node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 12 )]
+
 [node name="Enemy5" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 2402.88, 134.031 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy5" instance=ExtResource( 9 )]
+
+[node name="AttackQueue" parent="YSort/Enemy5" instance=ExtResource( 13 )]
+
+[node name="BasicAttack" parent="YSort/Enemy5/AttackQueue" instance=ExtResource( 12 )]
 
 [node name="Enemy6" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 2514.29, 48.4653 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy6" instance=ExtResource( 9 )]
 
+[node name="AttackQueue" parent="YSort/Enemy6" instance=ExtResource( 13 )]
+
+[node name="BasicAttack" parent="YSort/Enemy6/AttackQueue" instance=ExtResource( 12 )]
+
 [node name="Enemy7" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 2646.53, 150.573 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy7" instance=ExtResource( 9 )]
+
+[node name="AttackQueue" parent="YSort/Enemy7" instance=ExtResource( 13 )]
+
+[node name="BasicAttack" parent="YSort/Enemy7/AttackQueue" instance=ExtResource( 12 )]
 
 [node name="Enemy3" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 769.202, -173.498 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy3" instance=ExtResource( 9 )]
 
+[node name="AttackQueue" parent="YSort/Enemy3" instance=ExtResource( 13 )]
+
+[node name="BasicAttack" parent="YSort/Enemy3/AttackQueue" instance=ExtResource( 12 )]
+
 [node name="Enemy4" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 964.019, 147.691 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy4" instance=ExtResource( 9 )]
+
+[node name="AttackQueue" parent="YSort/Enemy4" instance=ExtResource( 13 )]
+
+[node name="BasicAttack" parent="YSort/Enemy4/AttackQueue" instance=ExtResource( 12 )]
 
 [node name="Campfire" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 2531.32, 148.791 )

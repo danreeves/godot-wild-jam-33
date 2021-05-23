@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://assets/Art/Decor/decor_Flowers.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/Art/Decor/decor_Shrub.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/Art/Decor/decor_Tree.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Systems/Attacks/BasicAttack.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Systems/AttackQueue.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
@@ -44,20 +46,36 @@ position = Vector2( 602.418, -64.827 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 9 )]
 
+[node name="AttackQueue" parent="YSort/Enemy2" instance=ExtResource( 18 )]
+
+[node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 17 )]
+
 [node name="Enemy3" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 608.081, 88.0807 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy3" instance=ExtResource( 9 )]
+
+[node name="AttackQueue" parent="YSort/Enemy3" instance=ExtResource( 18 )]
+
+[node name="BasicAttack" parent="YSort/Enemy3/AttackQueue" instance=ExtResource( 17 )]
 
 [node name="Enemy" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 1350.89, -155.795 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy" instance=ExtResource( 3 )]
 
+[node name="AttackQueue" parent="YSort/Enemy" instance=ExtResource( 18 )]
+
+[node name="BasicAttack" parent="YSort/Enemy/AttackQueue" instance=ExtResource( 17 )]
+
 [node name="Enemy4" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 1675.58, 114.153 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy4" instance=ExtResource( 3 )]
+
+[node name="AttackQueue" parent="YSort/Enemy4" instance=ExtResource( 18 )]
+
+[node name="BasicAttack" parent="YSort/Enemy4/AttackQueue" instance=ExtResource( 17 )]
 
 [node name="Campfire" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 2470.73, -151.448 )

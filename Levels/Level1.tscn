@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://running.png" type="Texture" id=12]
 [ext_resource path="res://water.png" type="Texture" id=13]
 [ext_resource path="res://attack.png" type="Texture" id=14]
+[ext_resource path="res://Systems/Attacks/BasicAttack.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Systems/AttackQueue.tscn" type="PackedScene" id=16]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends \"res://Levels/Level.gd\"
@@ -92,20 +94,36 @@ position = Vector2( 1106.11, 26.298 )
 [node name="AnimatedSprite" parent="YSort/Enemy" instance=ExtResource( 3 )]
 position = Vector2( 0.749268, 1.49829 )
 
+[node name="AttackQueue" parent="YSort/Enemy" instance=ExtResource( 16 )]
+
+[node name="BasicAttack" parent="YSort/Enemy/AttackQueue" instance=ExtResource( 15 )]
+
 [node name="Enemy2" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 1876.88, 13.4205 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 3 )]
+
+[node name="AttackQueue" parent="YSort/Enemy2" instance=ExtResource( 16 )]
+
+[node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 15 )]
 
 [node name="Enemy3" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 2984.58, 14.951 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy3" instance=ExtResource( 3 )]
 
+[node name="AttackQueue" parent="YSort/Enemy3" instance=ExtResource( 16 )]
+
+[node name="BasicAttack" parent="YSort/Enemy3/AttackQueue" instance=ExtResource( 15 )]
+
 [node name="Enemy4" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 3863.76, 1.02255 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy4" instance=ExtResource( 3 )]
+
+[node name="AttackQueue" parent="YSort/Enemy4" instance=ExtResource( 16 )]
+
+[node name="BasicAttack" parent="YSort/Enemy4/AttackQueue" instance=ExtResource( 15 )]
 
 [node name="Tutorial" type="Label" parent="YSort"]
 margin_left = -11.5845
