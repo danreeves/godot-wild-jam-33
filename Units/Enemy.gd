@@ -7,8 +7,10 @@ export var move_away_from_player = false
 export var health = 100
 export var wait_time: float = 3 setget set_wait_time
 export var cooldown: float = 0.2
+export var aggro_range = 100
 export var blind = false
 export var slowed = false
+export var hasted = false
 
 onready var spell_manager = get_target().find_node("SpellManager")
 
@@ -70,6 +72,7 @@ func _process(_delta: float) -> void:
 	
 	find_node("Blind").visible = !dead and blind
 	find_node("Slow").visible = !dead and slowed
+	find_node("Haste").visible = !dead and hasted
 	
 	if dead: 
 		return
@@ -91,7 +94,7 @@ func _physics_process(_delta: float) -> void:
 	var velocity = Vector2.ZERO
 	var target = get_target()
 	
-	if target and move_to_player:
+	if target and move_to_player and target.position.distance_to(position) < aggro_range:
 		velocity = (target.position - self.position).normalized() * speed
 	
 	if target and move_away_from_player:
@@ -101,6 +104,8 @@ func _physics_process(_delta: float) -> void:
 		if $AnimatedSprite.animation == "run" \
 		or $AnimatedSprite.animation == "flee":
 			$AnimatedSprite.play("idle")
+		elif target_in_range and $AnimatedSprite.animation != "attack":
+			$AnimatedSprite.play("combat")
 	elif move_away_from_player:
 		$AnimatedSprite.play("flee")
 	else:

@@ -4,7 +4,13 @@ export(Globals.Elements) var element = Globals.Elements.None
 export var speed = 100
 var in_range = []
 var unit_in_range_last_frame = false
+
+export var wait_time: float = 3 setget set_wait_time
+export var cooldown: float = 0.2
 export var dead = false
+export var blind = false
+export var slowed = false
+export var hasted = false
 
 onready var spell_manager = $SpellManager
 
@@ -19,6 +25,10 @@ func _process(_delta: float) -> void:
 	if Input.is_action_pressed("ui_cancel"):
 		get_node("HUD").find_node("Pause").visible = true
 		get_tree().paused = true
+	
+	find_node("Blind").visible = !dead and blind
+	find_node("Slow").visible = !dead and slowed
+	find_node("Haste").visible = !dead and hasted
 	
 	if dead:
 		if $AttackQueue.is_running:
@@ -142,3 +152,8 @@ func input_event(_vp, event: InputEvent, _idx) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		if spell_manager.active_spell_can_target(self):
 			spell_manager.cast(self)
+			
+func set_wait_time(new_wait_time):
+	wait_time = new_wait_time
+	if find_node("AttackQueue"):
+		$AttackQueue.wait_time = new_wait_time

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Units/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI/Blind.png" type="Texture" id=2]
 [ext_resource path="res://assets/UI/Slow.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/Haste.png" type="Texture" id=4]
 [ext_resource path="res://Systems/Health.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -28,7 +29,7 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Health" parent="." instance=ExtResource( 5 )]
-position = Vector2( 0, 45.241 )
+position = Vector2( -0.374573, 51.9834 )
 
 [node name="ClickArea" type="Area2D" parent="."]
 
@@ -38,6 +39,7 @@ shape = SubResource( 3 )
 [node name="ColorTween" type="Tween" parent="."]
 
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -15.4036, 145.146 )
 z_index = 10
 
 [node name="Debuffs" type="HBoxContainer" parent="Node2D"]
@@ -52,14 +54,18 @@ __meta__ = {
 }
 
 [node name="Blind" type="TextureRect" parent="Node2D/Debuffs"]
-margin_left = 32.0
-margin_right = 92.0
+margin_right = 60.0
 margin_bottom = 60.0
 texture = ExtResource( 2 )
 
 [node name="Slow" type="TextureRect" parent="Node2D/Debuffs"]
-visible = false
-margin_left = 32.0
-margin_right = 92.0
+margin_left = 64.0
+margin_right = 124.0
 margin_bottom = 60.0
 texture = ExtResource( 3 )
+
+[node name="Haste" type="TextureRect" parent="Node2D/Debuffs"]
+margin_left = 128.0
+margin_right = 188.0
+margin_bottom = 60.0
+texture = ExtResource( 4 )

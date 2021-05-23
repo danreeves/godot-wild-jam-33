@@ -42,11 +42,12 @@ __meta__ = {
 position = Vector2( 193, -2.19452 )
 wait_time = 0.5
 cooldown = 0.5
+aggro_range = 500
 
 [node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 9 )]
 
 [node name="AttackQueue" parent="YSort/Enemy2" instance=ExtResource( 12 )]
-position = Vector2( -1.5874, -46.8284 )
+position = Vector2( 3.18019, -47.3581 )
 wait_time = 2.1
 
 [node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 11 )]
@@ -65,7 +66,7 @@ sprite = ExtResource( 14 )
 [node name="AnimatedSprite" parent="YSort/Enemy" instance=ExtResource( 3 )]
 
 [node name="AttackQueue" parent="YSort/Enemy" instance=ExtResource( 12 )]
-position = Vector2( -1.5874, -46.8284 )
+position = Vector2( 2.64867, -48.7353 )
 wait_time = 2.1
 
 [node name="BasicAttack" parent="YSort/Enemy/AttackQueue" instance=ExtResource( 11 )]

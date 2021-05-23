@@ -13,6 +13,7 @@ var spells = [
 	ToWater.new(),
 	Blind.new(),
 	Slow.new(),
+	Haste.new(),
 ]
 var active_spell = null
 
