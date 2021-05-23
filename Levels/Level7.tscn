@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Camera2D.gd" type="Script" id=1]
+[ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
+[ext_resource path="res://Units/DogAnimatedSprite.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Units/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Units/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=6]
+[ext_resource path="res://Units/Campfire.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Level3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/Art/Decor/decor_Beer2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Props/StartBarrier.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/Art/Decor/decor_Shrub.tscn" type="PackedScene" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9999, 10 )
+
+[node name="World" type="Node"]
+script = ExtResource( 6 )
+next_scene = ExtResource( 8 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="YSort"]
+margin_left = -712.764
+margin_top = -294.156
+margin_right = 99286.2
+margin_bottom = 371.844
+rect_scale = Vector2( 0.777701, 0.97496 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1049.77, -85.2867 )
+
+[node name="AnimatedSprite" parent="YSort/Enemy" instance=ExtResource( 3 )]
+
+[node name="Enemy4" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1056.89, 94.6748 )
+
+[node name="AnimatedSprite" parent="YSort/Enemy4" instance=ExtResource( 3 )]
+
+[node name="Enemy5" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1623.51, -72.8141 )
+
+[node name="AnimatedSprite" parent="YSort/Enemy5" instance=ExtResource( 3 )]
+
+[node name="Enemy6" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1614.6, 91.1112 )
+
+[node name="AnimatedSprite" parent="YSort/Enemy6" instance=ExtResource( 3 )]
+
+[node name="Enemy7" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 2082.14, -9.79639 )
+
+[node name="AnimatedSprite" parent="YSort/Enemy7" instance=ExtResource( 3 )]
+
+[node name="Enemy3" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 650.644, -6.88763 )
+
+[node name="AnimatedSprite" parent="YSort/Enemy3" instance=ExtResource( 3 )]
+
+[node name="Campfire" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 3020.11, 128.884 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort"]
+current = true
+script = ExtResource( 1 )
+
+[node name="Horizon" type="StaticBody2D" parent="YSort"]
+position = Vector2( -14.4785, -200.268 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Horizon"]
+shape = SubResource( 1 )
+
+[node name="Horizon2" type="StaticBody2D" parent="YSort"]
+position = Vector2( 13.8058, 216.925 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Horizon2"]
+shape = SubResource( 1 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -486.817, -2.19452 )
+
+[node name="StartBarrier" parent="YSort" instance=ExtResource( 10 )]
+
+[node name="decor_Beer2" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 2022.74, -182.215 )
+scale = Vector2( 0.770094, 0.583296 )
+
+[node name="decor_Beer3" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 865.944, 271.548 )
+scale = Vector2( 0.979863, 1.19399 )
+
+[node name="decor_Beer4" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 775.103, -181.209 )
+scale = Vector2( 0.45929, 0.482799 )
+
+[node name="decor_Shrub" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 1156.9, -142.943 )
+scale = Vector2( -0.651817, 0.815617 )
+
+[node name="decor_Shrub2" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 1482.42, 231.959 )
+scale = Vector2( 1.56527, 0.481219 )
+
+[node name="decor_Shrub3" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 2238.95, 153.387 )
+scale = Vector2( 0.475954, 0.456265 )
+
+[node name="decor_Shrub4" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 2757.53, -129.474 )
+scale = Vector2( 0.493707, 1.2161 )
+
+[node name="decor_Shrub5" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 2984.27, -165.393 )
+scale = Vector2( -0.959151, 0.553616 )
+
+[node name="decor_Shrub6" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 3253.66, 265.632 )
+scale = Vector2( 0.97788, 0.65599 )
+
+[node name="decor_Beer5" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -144.118, -189.112 )
+scale = Vector2( 0.681569, 0.622054 )
