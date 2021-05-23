@@ -8,13 +8,13 @@ export (int) var mana = max_mana
 
 var spells = [
 	Heal.new(),
-	ToGrass.new(),
-	ToFire.new(),
-	ToWater.new(),
-	Blind.new(),
-	Slow.new(),
-	Haste.new(),
-	Fear.new(),
+#	ToGrass.new(),
+#	ToFire.new(),
+#	ToWater.new(),
+#	Blind.new(),
+#	Slow.new(),
+#	Haste.new(),
+#	Fear.new(),
 ]
 var active_spell = null
 
