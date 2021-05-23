@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/Art/Decor/decor_title.png" type="Texture" id=1]
 [ext_resource path="res://PixelatedPusab.ttf" type="DynamicFontData" id=2]
@@ -22,6 +22,10 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
 font_data = ExtResource( 2 )
 
 [node name="Control" type="Control"]
@@ -110,3 +114,14 @@ custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Bobbus - Lead Art Director and Consultant"
 align = 1
+
+[node name="Button" type="Button" parent="TextureRect/VBoxContainer"]
+margin_top = 182.0
+margin_right = 608.0
+margin_bottom = 214.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
+custom_colors/font_color_hover = Color( 0.0588235, 0.752941, 0.0431373, 1 )
+custom_colors/font_color_pressed = Color( 0.901961, 0.117647, 0.941176, 1 )
+text = "QUIT"
+flat = true
