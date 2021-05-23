@@ -97,6 +97,7 @@ position = Vector2( 0.749268, 1.49829 )
 [node name="AttackQueue" parent="YSort/Enemy" instance=ExtResource( 16 )]
 
 [node name="BasicAttack" parent="YSort/Enemy/AttackQueue" instance=ExtResource( 15 )]
+base_damage = 20
 
 [node name="Enemy2" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 1876.88, 13.4205 )
@@ -106,6 +107,7 @@ position = Vector2( 1876.88, 13.4205 )
 [node name="AttackQueue" parent="YSort/Enemy2" instance=ExtResource( 16 )]
 
 [node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 15 )]
+base_damage = 25
 
 [node name="Enemy3" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 2984.58, 14.951 )
@@ -115,6 +117,7 @@ position = Vector2( 2984.58, 14.951 )
 [node name="AttackQueue" parent="YSort/Enemy3" instance=ExtResource( 16 )]
 
 [node name="BasicAttack" parent="YSort/Enemy3/AttackQueue" instance=ExtResource( 15 )]
+base_damage = 30
 
 [node name="Enemy4" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 3863.76, 1.02255 )
@@ -124,6 +127,7 @@ position = Vector2( 3863.76, 1.02255 )
 [node name="AttackQueue" parent="YSort/Enemy4" instance=ExtResource( 16 )]
 
 [node name="BasicAttack" parent="YSort/Enemy4/AttackQueue" instance=ExtResource( 15 )]
+base_damage = 35
 
 [node name="Tutorial" type="Label" parent="YSort"]
 margin_left = -11.5845
@@ -131,7 +135,7 @@ margin_top = -180.056
 margin_right = 704.416
 margin_bottom = -75.056
 custom_fonts/font = SubResource( 3 )
-text = "at the top left of the screen, 
+text = "at the bottom of the screen, 
 you can see your mana.
 
 mana is used to cast spells to aid the hero."
