@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -34,6 +34,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass
+
+
+func _on_Area2D_body_entered(body: Node) -> void:
+	if body == find_node(\"Player\"):
+		var spell_manager = body.find_node(\"SpellManager\")
+		spell_manager.add_spell(ToFire.new())
+		spell_manager.add_spell(ToWater.new())
+		spell_manager.add_spell(ToGrass.new())
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -44,6 +52,9 @@ size = 24
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 600 )
 
 [node name="World" type="Node"]
 script = SubResource( 1 )
@@ -95,6 +106,7 @@ position = Vector2( 1106.11, 26.298 )
 position = Vector2( 0.749268, 1.49829 )
 
 [node name="AttackQueue" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 0.793701, -51.5905 )
 
 [node name="BasicAttack" parent="YSort/Enemy/AttackQueue" instance=ExtResource( 15 )]
 base_damage = 20
@@ -105,6 +117,7 @@ position = Vector2( 1876.88, 13.4205 )
 [node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 3 )]
 
 [node name="AttackQueue" parent="YSort/Enemy2" instance=ExtResource( 16 )]
+position = Vector2( -2.38086, -46.0346 )
 
 [node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 15 )]
 base_damage = 25
@@ -115,6 +128,7 @@ position = Vector2( 2984.58, 14.951 )
 [node name="AnimatedSprite" parent="YSort/Enemy3" instance=ExtResource( 3 )]
 
 [node name="AttackQueue" parent="YSort/Enemy3" instance=ExtResource( 16 )]
+position = Vector2( -1.5874, -50.7968 )
 
 [node name="BasicAttack" parent="YSort/Enemy3/AttackQueue" instance=ExtResource( 15 )]
 base_damage = 30
@@ -125,6 +139,7 @@ position = Vector2( 3863.76, 1.02255 )
 [node name="AnimatedSprite" parent="YSort/Enemy4" instance=ExtResource( 3 )]
 
 [node name="AttackQueue" parent="YSort/Enemy4" instance=ExtResource( 16 )]
+position = Vector2( 0, -48.4157 )
 
 [node name="BasicAttack" parent="YSort/Enemy4/AttackQueue" instance=ExtResource( 15 )]
 base_damage = 35
@@ -287,3 +302,11 @@ try to change it to the weakness of the hero's upcoming attack."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 3256.71, 119.389 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
