@@ -55,7 +55,7 @@ Globals="*res://Globals.gd"
 
 [display]
 
-window/size/height=576
+window/size/height=567
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

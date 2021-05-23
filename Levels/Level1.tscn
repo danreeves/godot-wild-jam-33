@@ -15,7 +15,7 @@
 [ext_resource path="res://water.png" type="Texture" id=13]
 [ext_resource path="res://attack.png" type="Texture" id=14]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends \"res://Levels/Level.gd\"
 
 
@@ -34,7 +34,7 @@ func _ready() -> void:
 #	pass
 "
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1e+08, 10 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -44,7 +44,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 8 )
 
 [node name="World" type="Node"]
-script = SubResource( 2 )
+script = SubResource( 1 )
 next_scene = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -68,13 +68,13 @@ __meta__ = {
 position = Vector2( -14.4785, -200.268 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Horizon2" type="StaticBody2D" parent="."]
 position = Vector2( 13.8058, 216.925 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon2"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StartBarrier" parent="." instance=ExtResource( 9 )]
 

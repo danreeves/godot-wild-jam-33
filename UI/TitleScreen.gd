@@ -2,11 +2,13 @@ extends Control
 
 func _ready() -> void:
 	print("onready")
-	var _err1 = find_node("TitleButtonQuit").connect("button_up", self, "quit")
-	var _err2 = find_node("TitleButtonPlay").connect("button_up", self, "play")
+	var _err1 = find_node("TitleButtonPlay").connect("button_up", self, "play")
+	var _err2 = find_node("TitleButtonQuit").connect("button_up", self, "quit")
+	
 	$Title.rect_position = Vector2($Title.rect_position.x, -$Title.rect_size.y)
 	$VBoxContainer.modulate.a = 0.0
-	var _err3 = $Tween.connect("tween_all_completed", self, "animate_menu")
+	var _err5 = $Tween.connect("tween_all_completed", self, "animate_menu")
+	var _err6 = $Tween2.connect("tween_all_completed", self, "menu_ready")
 	call_deferred("animate_title")
 
 func animate_title():
@@ -31,6 +33,8 @@ func animate_menu():
 	)
 	$Tween2.start()
 
+func menu_ready():
+	pass
 	
 func quit():
 	get_tree().quit()
