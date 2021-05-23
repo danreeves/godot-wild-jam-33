@@ -46,7 +46,7 @@ aggro_range = 500
 [node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 9 )]
 
 [node name="AttackQueue" parent="YSort/Enemy2" instance=ExtResource( 12 )]
-position = Vector2( 3.18019, -47.3581 )
+position = Vector2( 1.06123, -56.8933 )
 wait_time = 2.1
 
 [node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 11 )]
