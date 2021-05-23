@@ -2,6 +2,7 @@ extends Node
 class_name ToWater
 
 export (String) var spell_name = "Water"
+export (String) var description = ""
 export (Array) var targetable_groups = ["Enemies"]
 export (Texture) var texture = load("res://assets/UI/ToWater.png")
 export (int) var mana_cost = 10

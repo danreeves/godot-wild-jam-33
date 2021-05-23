@@ -2,6 +2,7 @@ extends Node
 class_name Fear
 
 export (String) var spell_name = "Fear"
+export (String) var description = "Scares enemies away from the Hero. They will return"
 export (Array) var targetable_groups = ["Enemies"]
 export (Texture) var texture = load("res://assets/UI/Fear.png")
 export (int) var mana_cost = 10
