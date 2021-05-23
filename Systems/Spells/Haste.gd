@@ -6,7 +6,7 @@ export (String) var description = "Increases Hero’s attack rate and movement s
 export (Array) var targetable_groups = ["Player", "Enemies"]
 export (Texture) var texture = load("res://assets/UI/Haste.png")
 export (int) var mana_cost = 10
-export (int) var cooldown = 2
+export (int) var cooldown = 3.7
 export (int) var blind_time = 4
 
 var target_to_timer = {}
@@ -15,8 +15,10 @@ func cast(target):
 	if "dead" in target and !target.dead:
 		if "hasted" in target:
 			target.hasted = true
+			
 		target.speed = target.speed * 2
 		target.wait_time = target.wait_time / 2
+		
 		if target_to_timer.has(target.get_instance_id()):
 			target_to_timer[target.get_instance_id()].start()
 		else:

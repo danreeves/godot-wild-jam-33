@@ -8,7 +8,9 @@
 script/source = "extends Control
 
 func _on_Quit_button_up() -> void:
-	get_tree().quit()
+	var err = get_tree().change_scene(\"res://Levels/MusicCredits.tscn\")
+	if err:
+		print(err)
 "
 
 [sub_resource type="DynamicFont" id=2]
@@ -126,7 +128,6 @@ margin_left = 446.971
 margin_top = 588.267
 margin_right = 1167.97
 margin_bottom = 660.267
-custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
-text = "Quit"
+text = "Next"
 
 [connection signal="button_up" from="TextureRect/Quit" to="." method="_on_Quit_button_up"]
