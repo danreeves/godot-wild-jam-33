@@ -37,11 +37,12 @@ __meta__ = {
 }
 
 [node name="Enemy2" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 177.898, -2.19452 )
+position = Vector2( 176.898, -8.19452 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 9 )]
 
 [node name="AttackQueue" parent="YSort/Enemy2" instance=ExtResource( 13 )]
+position = Vector2( 2.66968, -56.0542 )
 
 [node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 12 )]
 base_damage = 20
@@ -52,6 +53,7 @@ position = Vector2( 2402.88, 134.031 )
 [node name="AnimatedSprite" parent="YSort/Enemy5" instance=ExtResource( 9 )]
 
 [node name="AttackQueue" parent="YSort/Enemy5" instance=ExtResource( 13 )]
+position = Vector2( 1.77563, -58.3011 )
 
 [node name="BasicAttack" parent="YSort/Enemy5/AttackQueue" instance=ExtResource( 12 )]
 base_damage = 20
@@ -62,6 +64,7 @@ position = Vector2( 2514.29, 48.4653 )
 [node name="AnimatedSprite" parent="YSort/Enemy6" instance=ExtResource( 9 )]
 
 [node name="AttackQueue" parent="YSort/Enemy6" instance=ExtResource( 13 )]
+position = Vector2( 2.66943, -54.7375 )
 
 [node name="BasicAttack" parent="YSort/Enemy6/AttackQueue" instance=ExtResource( 12 )]
 base_damage = 30
@@ -72,25 +75,28 @@ position = Vector2( 2646.53, 150.573 )
 [node name="AnimatedSprite" parent="YSort/Enemy7" instance=ExtResource( 9 )]
 
 [node name="AttackQueue" parent="YSort/Enemy7" instance=ExtResource( 13 )]
+position = Vector2( 2.22266, -58.748 )
 
 [node name="BasicAttack" parent="YSort/Enemy7/AttackQueue" instance=ExtResource( 12 )]
 
 [node name="Enemy3" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 769.202, -173.498 )
+position = Vector2( 790.109, -149.027 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy3" instance=ExtResource( 9 )]
 
 [node name="AttackQueue" parent="YSort/Enemy3" instance=ExtResource( 13 )]
+position = Vector2( 4.89233, -55.6344 )
 
 [node name="BasicAttack" parent="YSort/Enemy3/AttackQueue" instance=ExtResource( 12 )]
 base_damage = 30
 
 [node name="Enemy4" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 964.019, 147.691 )
+position = Vector2( 993.826, 127.225 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy4" instance=ExtResource( 9 )]
 
 [node name="AttackQueue" parent="YSort/Enemy4" instance=ExtResource( 13 )]
+position = Vector2( 3.11365, -56.9662 )
 
 [node name="BasicAttack" parent="YSort/Enemy4/AttackQueue" instance=ExtResource( 12 )]
 base_damage = 30

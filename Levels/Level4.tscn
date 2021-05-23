@@ -47,6 +47,7 @@ position = Vector2( 602.418, -64.827 )
 [node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 9 )]
 
 [node name="AttackQueue" parent="YSort/Enemy2" instance=ExtResource( 18 )]
+position = Vector2( 2.82837, -52.3259 )
 
 [node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 17 )]
 
@@ -56,6 +57,7 @@ position = Vector2( 608.081, 88.0807 )
 [node name="AnimatedSprite" parent="YSort/Enemy3" instance=ExtResource( 9 )]
 
 [node name="AttackQueue" parent="YSort/Enemy3" instance=ExtResource( 18 )]
+position = Vector2( 2.46082, -54.3757 )
 
 [node name="BasicAttack" parent="YSort/Enemy3/AttackQueue" instance=ExtResource( 17 )]
 base_damage = 20
@@ -66,6 +68,7 @@ position = Vector2( 1350.89, -155.795 )
 [node name="AnimatedSprite" parent="YSort/Enemy" instance=ExtResource( 3 )]
 
 [node name="AttackQueue" parent="YSort/Enemy" instance=ExtResource( 18 )]
+position = Vector2( -2.82837, -42.4264 )
 
 [node name="BasicAttack" parent="YSort/Enemy/AttackQueue" instance=ExtResource( 17 )]
 base_damage = 30
@@ -76,6 +79,7 @@ position = Vector2( 1675.58, 114.153 )
 [node name="AnimatedSprite" parent="YSort/Enemy4" instance=ExtResource( 3 )]
 
 [node name="AttackQueue" parent="YSort/Enemy4" instance=ExtResource( 18 )]
+position = Vector2( -2.82849, -49.4975 )
 
 [node name="BasicAttack" parent="YSort/Enemy4/AttackQueue" instance=ExtResource( 17 )]
 base_damage = 30
