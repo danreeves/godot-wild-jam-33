@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/405160__rayolf__btn-hover.wav-47aff211d2f62df002433b2b8e83357c.sample"
+
+[deps]
+
+source_file="res://soundeffects/405160__rayolf__btn-hover.wav"
+dest_files=[ "res://.import/405160__rayolf__btn-hover.wav-47aff211d2f62df002433b2b8e83357c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

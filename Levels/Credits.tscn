@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Art/Decor/decor_title.png" type="Texture" id=1]
+[ext_resource path="res://PixelatedPusab.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 576.0
+margin_bottom = 324.0
+rect_scale = Vector2( 0.63993, 0.639873 )
+texture = ExtResource( 1 )
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.0
+margin_right = 100.0
+margin_bottom = 270.0
+rect_scale = Vector2( 1.61157, 4.1133 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer"]
+margin_right = 250.0
+margin_bottom = 54.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.94902, 0.803922, 0.027451, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 6
+custom_constants/shadow_offset_y = 1
+bbcode_enabled = true
+bbcode_text = "[wave amp=10 rate=10][center] CREDITS"
+text = " CREDITS"
+fit_content_height = true

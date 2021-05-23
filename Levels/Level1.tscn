@@ -8,7 +8,7 @@
 [ext_resource path="res://Levels/Level2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Units/Campfire.tscn" type="PackedScene" id=7]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends \"res://Levels/Level.gd\"
 
 
@@ -27,11 +27,11 @@ func _ready() -> void:
 #	pass
 "
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 9999, 10 )
 
 [node name="World" type="Node"]
-script = SubResource( 2 )
+script = SubResource( 1 )
 next_scene = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -62,13 +62,13 @@ script = ExtResource( 1 )
 position = Vector2( -14.4785, -200.268 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Horizon2" type="StaticBody2D" parent="."]
 position = Vector2( 13.8058, 216.925 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon2"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -486.817, -2.19452 )
