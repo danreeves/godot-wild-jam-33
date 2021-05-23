@@ -1,0 +1,228 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Camera2D.gd" type="Script" id=1]
+[ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/Art/Decor/decor_Tree.png" type="Texture" id=3]
+[ext_resource path="res://Units/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Units/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=6]
+[ext_resource path="res://Units/Campfire.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Credits.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Units/DonkAnimatedSprite.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Props/StartBarrier.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/Art/Decor/decor_Flowers.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9999, 10 )
+
+[node name="World" type="Node"]
+script = ExtResource( 6 )
+next_scene = ExtResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -712.764
+margin_top = -294.156
+margin_right = 99286.2
+margin_bottom = 371.844
+rect_scale = Vector2( 0.777701, 0.97496 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 177.898, -2.19452 )
+
+[node name="AnimatedSprite" parent="Enemy2" instance=ExtResource( 9 )]
+
+[node name="Enemy5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2402.88, 134.031 )
+
+[node name="AnimatedSprite" parent="Enemy5" instance=ExtResource( 9 )]
+
+[node name="Enemy6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2514.29, 48.4653 )
+
+[node name="AnimatedSprite" parent="Enemy6" instance=ExtResource( 9 )]
+
+[node name="Enemy7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2646.53, 150.573 )
+
+[node name="AnimatedSprite" parent="Enemy7" instance=ExtResource( 9 )]
+
+[node name="Enemy3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 769.202, -173.498 )
+
+[node name="AnimatedSprite" parent="Enemy3" instance=ExtResource( 9 )]
+
+[node name="Enemy4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 964.019, 147.691 )
+
+[node name="AnimatedSprite" parent="Enemy4" instance=ExtResource( 9 )]
+
+[node name="Campfire" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2531.32, 148.791 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 1 )
+
+[node name="Horizon" type="StaticBody2D" parent="."]
+position = Vector2( -14.4785, -200.268 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon"]
+shape = SubResource( 1 )
+
+[node name="Horizon2" type="StaticBody2D" parent="."]
+position = Vector2( 13.8058, 216.925 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Horizon2"]
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -486.817, -2.19452 )
+
+[node name="StartBarrier" parent="." instance=ExtResource( 10 )]
+
+[node name="decor_Tree" type="Sprite" parent="."]
+position = Vector2( -284.12, -47.8882 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree2" type="Sprite" parent="."]
+position = Vector2( -94.0775, -46.2064 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree3" type="Sprite" parent="."]
+position = Vector2( 173.328, -256.431 )
+scale = Vector2( 0.666667, 0.45 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree4" type="Sprite" parent="."]
+position = Vector2( 316.28, -434.701 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree5" type="Sprite" parent="."]
+position = Vector2( 514.732, -10.8888 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree6" type="Sprite" parent="."]
+position = Vector2( 753.546, -438.064 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree7" type="Sprite" parent="."]
+position = Vector2( 329.734, 180.836 )
+scale = Vector2( -0.944439, 0.404959 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree8" type="Sprite" parent="."]
+position = Vector2( 1044.5, -170.659 )
+scale = Vector2( 1.42222, 1.31364 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree9" type="Sprite" parent="."]
+position = Vector2( 1369.08, -399.382 )
+scale = Vector2( 0.571429, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree10" type="Sprite" parent="."]
+position = Vector2( 1441.4, -306.884 )
+scale = Vector2( 0.571429, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree11" type="Sprite" parent="."]
+position = Vector2( 1617.99, -365.747 )
+scale = Vector2( 0.571429, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree12" type="Sprite" parent="."]
+position = Vector2( 1774.87, -222.453 )
+scale = Vector2( 1.11619, 1.32037 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree13" type="Sprite" parent="."]
+position = Vector2( 2327.7, -409.474 )
+scale = Vector2( -1.09375, 0.943814 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree14" type="Sprite" parent="."]
+position = Vector2( 2189.8, -7.52551 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree15" type="Sprite" parent="."]
+position = Vector2( 2719.56, -461.61 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree16" type="Sprite" parent="."]
+position = Vector2( 2873.81, 24.4979 )
+scale = Vector2( -0.686771, 0.613172 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree17" type="Sprite" parent="."]
+position = Vector2( 3063.12, 163.039 )
+scale = Vector2( 0.423077, 0.32973 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree18" type="Sprite" parent="."]
+position = Vector2( 3014.04, -256.041 )
+scale = Vector2( -0.421053, 0.326087 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree19" type="Sprite" parent="."]
+position = Vector2( 3216.03, -522.213 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree20" type="Sprite" parent="."]
+position = Vector2( 3387.82, -405.173 )
+scale = Vector2( -1.39474, 1.02857 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree21" type="Sprite" parent="."]
+position = Vector2( 3304.75, -35.1742 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree22" type="Sprite" parent="."]
+position = Vector2( 3635.11, 30.897 )
+scale = Vector2( 1.08501, 0.475001 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree23" type="Sprite" parent="."]
+position = Vector2( 3888.07, -465.581 )
+scale = Vector2( 1.92311, 1 )
+texture = ExtResource( 3 )
+
+[node name="decor_Tree24" type="Sprite" parent="."]
+position = Vector2( 3988.12, -21.96 )
+scale = Vector2( -1.17856, 0.935484 )
+texture = ExtResource( 3 )
+
+[node name="decor_Flowers" type="Sprite" parent="."]
+position = Vector2( 1392.46, 72.4278 )
+scale = Vector2( -0.699996, 0.727272 )
+texture = ExtResource( 11 )
+
+[node name="decor_Flowers2" type="Sprite" parent="."]
+position = Vector2( 1467.97, 123.397 )
+scale = Vector2( 0.574075, 0.55 )
+texture = ExtResource( 11 )
+
+[node name="decor_Flowers3" type="Sprite" parent="."]
+position = Vector2( 1420.78, 136.611 )
+scale = Vector2( -0.78947, 0.857142 )
+texture = ExtResource( 11 )
+
+[node name="decor_Flowers4" type="Sprite" parent="."]
+position = Vector2( 1517.06, -184.306 )
+scale = Vector2( -0.399998, 0.421053 )
+texture = ExtResource( 11 )
+
+[node name="decor_Flowers5" type="Sprite" parent="."]
+position = Vector2( 1486.85, -172.98 )
+scale = Vector2( 0.404255, 0.530612 )
+texture = ExtResource( 11 )
+
+[node name="decor_Flowers6" type="Sprite" parent="."]
+position = Vector2( 2534.55, -144.663 )
+scale = Vector2( 0.617022, 0.490195 )
+texture = ExtResource( 11 )
