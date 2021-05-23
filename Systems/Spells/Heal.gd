@@ -2,6 +2,7 @@ extends Node
 class_name Heal
 
 export (String) var spell_name = "Heal"
+export (String) var description = ""
 export (Array) var targetable_groups = ["Player"]
 export (Texture) var texture = load("res://assets/UI/Heal.png")
 export (int) var mana_cost = 20

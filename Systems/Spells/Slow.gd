@@ -2,6 +2,7 @@ extends Node
 class_name Slow
 
 export (String) var spell_name = "Slow"
+export (String) var description = "Slows enemy attack rate and movement speed"
 export (Array) var targetable_groups = ["Enemies"]
 export (Texture) var texture = load("res://assets/UI/Slow.png")
 export (int) var mana_cost = 10

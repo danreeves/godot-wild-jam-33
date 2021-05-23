@@ -2,6 +2,7 @@ extends Node
 class_name Haste
 
 export (String) var spell_name = "Haste"
+export (String) var description = "Increases Hero’s attack rate and movement speed"
 export (Array) var targetable_groups = ["Player", "Enemies"]
 export (Texture) var texture = load("res://assets/UI/Haste.png")
 export (int) var mana_cost = 10

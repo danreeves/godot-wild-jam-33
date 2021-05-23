@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/Store.gd" type="Script" id=1]
+[ext_resource path="res://PixelatedPusab.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/Art/Decor/decor_title.png" type="Texture" id=3]
+[ext_resource path="res://UI/Button.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Store" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.639935, 0.639953 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+margin_top = 306.0
+margin_right = 1600.0
+margin_bottom = 306.0
+alignment = 1
+
+[node name="Currency" type="Label" parent="TextureRect/VBoxContainer"]
+margin_top = 310.0
+margin_right = 1600.0
+margin_bottom = 334.0
+custom_fonts/font = SubResource( 1 )
+text = "Godly favours: 1"
+align = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="TextureRect/VBoxContainer"]
+margin_top = 338.0
+margin_right = 1600.0
+margin_bottom = 538.0
+rect_min_size = Vector2( 0, 200 )
+
+[node name="ContinueButton" parent="TextureRect/VBoxContainer" instance=ExtResource( 4 )]
+margin_left = 0.0
+margin_top = 542.0
+margin_right = 1600.0
+margin_bottom = 594.0
+text = "Continue"
+
+[connection signal="button_up" from="TextureRect/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_button_up"]

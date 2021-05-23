@@ -1,5 +1,7 @@
 extends Node
 
+export (Resource) var next_scene = null
+
 enum Elements {
 	None,
 	Fire,

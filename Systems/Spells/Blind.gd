@@ -2,6 +2,7 @@ extends Node
 class_name Blind
 
 export (String) var spell_name = "Blind"
+export (String) var description = "Makes enemies miss attacks for a duration"
 export (Array) var targetable_groups = ["Enemies"]
 export (Texture) var texture = load("res://assets/UI/Blind.png")
 export (int) var mana_cost = 10
