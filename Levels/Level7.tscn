@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/Art/Decor/decor_Beer2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Props/StartBarrier.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/Art/Decor/decor_Shrub.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Systems/AttackQueue.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Systems/Attacks/BasicAttack.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
@@ -38,6 +40,10 @@ __meta__ = {
 position = Vector2( 1049.77, -85.2867 )
 
 [node name="AnimatedSprite" parent="YSort/Enemy" instance=ExtResource( 3 )]
+
+[node name="AttackQueue" parent="YSort/Enemy" instance=ExtResource( 12 )]
+
+[node name="BasicAttack" parent="YSort/Enemy/AttackQueue" instance=ExtResource( 13 )]
 
 [node name="Enemy4" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 1056.89, 94.6748 )
