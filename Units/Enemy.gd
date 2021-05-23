@@ -48,7 +48,8 @@ func unit_enter_range(unit: Node2D) -> void:
 		move_to_player = false
 		if !dead:
 			target_in_range = true
-			$AttackQueue.start_timer()
+			if !move_away_from_player:
+				$AttackQueue.start_timer()
 
 func unit_leave_range(unit: Node2D) -> void:
 	if unit == get_target():
@@ -84,7 +85,7 @@ func _process(_delta: float) -> void:
 	if get_target().dead and $AttackQueue.is_running:
 		$AttackQueue.stop()
 		
-	if !$AttackQueue.is_running and !get_target().dead and target_in_range:
+	if !$AttackQueue.is_running and !get_target().dead and target_in_range and !move_away_from_player:
 		$AttackQueue.start_timer()
 
 func _physics_process(_delta: float) -> void:

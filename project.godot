@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Systems/Spells/Blind.gd"
 }, {
 "base": "Node",
+"class": "Fear",
+"language": "GDScript",
+"path": "res://Systems/Spells/Fear.gd"
+}, {
+"base": "Node",
 "class": "Haste",
 "language": "GDScript",
 "path": "res://Systems/Spells/Haste.gd"
@@ -51,6 +56,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Blind": "",
+"Fear": "",
 "Haste": "",
 "Heal": "",
 "Heal2": "",
@@ -65,7 +71,6 @@ _global_script_class_icons={
 config/name="godot-wild-jam-33"
 run/main_scene="res://UI/TitleScreen.tscn"
 boot_splash/image="res://assets/Art/Decor/decor_title.png"
-config/icon="res://icon.png"
 
 [autoload]
 

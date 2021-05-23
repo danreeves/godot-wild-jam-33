@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Props/StartBarrier.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Systems/Attacks/BasicAttack.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Systems/AttackQueue.tscn" type="PackedScene" id=12]
-[ext_resource path="res://attack.png" type="Texture" id=13]
 [ext_resource path="res://running.png" type="Texture" id=14]
 [ext_resource path="res://Systems/Attacks/RunAway.tscn" type="PackedScene" id=15]
 
@@ -51,11 +50,9 @@ position = Vector2( 3.18019, -47.3581 )
 wait_time = 2.1
 
 [node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 11 )]
-sprite = ExtResource( 13 )
 base_damage = 5
 
 [node name="BasicAttack2" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 11 )]
-sprite = ExtResource( 13 )
 base_damage = 5
 
 [node name="RunAway" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 15 )]
@@ -70,7 +67,6 @@ position = Vector2( 2.64867, -48.7353 )
 wait_time = 2.1
 
 [node name="BasicAttack" parent="YSort/Enemy/AttackQueue" instance=ExtResource( 11 )]
-sprite = ExtResource( 13 )
 base_damage = 20
 
 [node name="Campfire" parent="YSort" instance=ExtResource( 7 )]
