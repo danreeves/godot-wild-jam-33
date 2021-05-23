@@ -110,10 +110,10 @@ margin_top = -180.056
 margin_right = 704.416
 margin_bottom = -75.0564
 custom_fonts/font = SubResource( 3 )
-text = "at the top left of the screen 
+text = "at the top left of the screen, 
 you can see your mana.
 
-mana is used to cast spells to aid the hero"
+mana is used to cast spells to aid the hero."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -126,7 +126,7 @@ margin_bottom = 222.944
 custom_fonts/font = SubResource( 3 )
 text = "if the hero takes damage, you can heal him 
 using the heal spell. the hero and enemies' 
-health is displayed by the red bar below them"
+health is displayed by the red bar below them."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -138,8 +138,8 @@ margin_right = 2732.42
 margin_bottom = -93.0564
 custom_fonts/font = SubResource( 3 )
 text = "the icon above the hero and enemies' heads 
-shows their next attack type and the blue bar 
-shows how long until it happens"
+shows their next attack type, and the blue bar 
+shows how long until it happens."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -231,7 +231,7 @@ margin_top = -185.748
 margin_right = 3774.64
 margin_bottom = -80.7479
 custom_fonts/font = SubResource( 3 )
-text = "each elemental attack has strengths and weaknesses"
+text = "each elemental attack has strengths and weaknesses."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -257,8 +257,8 @@ margin_right = 4539.5
 margin_bottom = 211.582
 custom_fonts/font = SubResource( 3 )
 text = "you can change an enemy's element by choosing a spell
-from the bottom of the screen and then clicking on an enemy
-try to change it to the weakness of the hero's upcoming attack"
+from the bottom of the screen and then clicking on an enemy.
+try to change it to the weakness of the hero's upcoming attack."
 __meta__ = {
 "_edit_use_anchors_": false
 }
