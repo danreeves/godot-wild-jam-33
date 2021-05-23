@@ -5,6 +5,7 @@ signal animation_finished
 export (String) var animation = "idle"
 export (Color) var _modulate = Color(1, 1, 1, 1)
 export (bool) var flip_h = false
+export (Color) var default_color = null
 
 func _ready() -> void:
 	var _err1 = $AnimatedSprite1.connect("animation_finished", self, "animation_finished")

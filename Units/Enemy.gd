@@ -96,6 +96,9 @@ func input_event(_vp, event: InputEvent, _idx) -> void:
 
 func set_element(ele):
 	element = ele
+	var color = Globals.ElementColor[ele]
+	if ele == Globals.Elements.None and "default_color" in $AnimatedSprite:
+		color = $AnimatedSprite.default_color
 	
 	var property = "modulate"
 	if "_modulate" in $AnimatedSprite:
@@ -105,7 +108,7 @@ func set_element(ele):
 		$AnimatedSprite, 
 		property, 
 		$AnimatedSprite.modulate, 
-		Globals.ElementColor[ele], 
+		color, 
 		0.2, 
 		Tween.TRANS_LINEAR
 	)

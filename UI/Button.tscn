@@ -4,22 +4,19 @@
 [ext_resource path="res://soundeffects/button-click.wav" type="AudioStream" id=2]
 [ext_resource path="res://soundeffects/button-hover.wav" type="AudioStream" id=3]
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="StyleBoxEmpty" id=1]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 45
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=3]
 script/source = "extends Button
 
 func _on_TitleButtonPlay_mouse_entered() -> void:
 	$HoverSound.play()
-
-func _on_TitleButtonPlay_button_up() -> void:
-	$ClickSound.play()
 
 func _on_Button_button_down() -> void:
 	$ClickSound.play()
@@ -29,12 +26,12 @@ func _on_Button_button_down() -> void:
 margin_left = 441.0
 margin_right = 583.0
 margin_bottom = 52.0
-custom_styles/focus = SubResource( 3 )
-custom_fonts/font = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
 text = "PLAY"
 flat = true
-script = SubResource( 2 )
+script = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -46,5 +43,4 @@ stream = ExtResource( 3 )
 stream = ExtResource( 2 )
 
 [connection signal="button_down" from="." to="." method="_on_Button_button_down"]
-[connection signal="button_up" from="." to="." method="_on_TitleButtonPlay_button_up"]
 [connection signal="mouse_entered" from="." to="." method="_on_TitleButtonPlay_mouse_entered"]

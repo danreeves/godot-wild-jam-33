@@ -125,10 +125,12 @@ func animation_finished() -> void:
 			$AnimatedSprite.play("idle")
 	
 	if $AnimatedSprite.animation == "camp":
+		$VictorySound.play()
 		get_node("HUD").find_node("Victory").visible = true
 		pass
 		
 	if $AnimatedSprite.animation == "die":
+		$DefeatSound.play()
 		get_node("HUD").find_node("Defeat").visible = true
 		pass
 
