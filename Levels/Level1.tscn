@@ -79,7 +79,7 @@ shape = SubResource( 2 )
 [node name="StartBarrier" parent="." instance=ExtResource( 9 )]
 
 [node name="Campfire" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2690.6, 25.2676 )
+position = Vector2( 4493.4, -8.71186 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -486.817, -2.19452 )
@@ -93,6 +93,16 @@ position = Vector2( 1106.11, 26.298 )
 position = Vector2( 1876.88, 13.4205 )
 
 [node name="AnimatedSprite" parent="Enemy2" instance=ExtResource( 3 )]
+
+[node name="Enemy3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2939.68, 17.196 )
+
+[node name="AnimatedSprite" parent="Enemy3" instance=ExtResource( 3 )]
+
+[node name="Enemy4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3679.68, 7.75729 )
+
+[node name="AnimatedSprite" parent="Enemy4" instance=ExtResource( 3 )]
 
 [node name="Tutorial" type="Label" parent="."]
 margin_left = -11.5845
@@ -170,8 +180,28 @@ position = Vector2( 1786.22, 167.238 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 10 )
 
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 3119.78, -142.71 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+
+[node name="Sprite7" type="Sprite" parent="."]
+position = Vector2( 3385.78, -84.7097 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+
 [node name="Sprite3" type="Sprite" parent="."]
 position = Vector2( 1784.54, 194.738 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 13 )
+
+[node name="Sprite8" type="Sprite" parent="."]
+position = Vector2( 3391.54, -114.262 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 13 )
+
+[node name="Sprite9" type="Sprite" parent="."]
+position = Vector2( 3126.54, -86.262 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 13 )
 
@@ -180,7 +210,55 @@ position = Vector2( 1785.66, 222.239 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 11 )
 
+[node name="Sprite10" type="Sprite" parent="."]
+position = Vector2( 3112.66, -112.761 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 11 )
+
+[node name="Sprite11" type="Sprite" parent="."]
+position = Vector2( 3374.66, -140.761 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 11 )
+
 [node name="Sprite5" type="Sprite" parent="."]
 position = Vector2( 2213.32, 170.605 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 12 )
+
+[node name="Tutorial6" type="Label" parent="."]
+margin_left = 2846.64
+margin_top = -185.748
+margin_right = 3774.64
+margin_bottom = -80.7479
+custom_fonts/font = SubResource( 3 )
+text = "each elemental attack has strengths and weaknesses"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial7" type="Label" parent="."]
+margin_left = 2787.91
+margin_top = -149.707
+margin_right = 3715.91
+margin_bottom = -44.7072
+custom_fonts/font = SubResource( 3 )
+text = "fire beats grass
+grass beats water
+water beats fire"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial8" type="Label" parent="."]
+margin_left = 3611.5
+margin_top = 106.582
+margin_right = 4539.5
+margin_bottom = 211.582
+custom_fonts/font = SubResource( 3 )
+text = "you can change an enemy's element by choosing a spell
+from the bottom of the screen and then clicking on an enemy
+try to change it to the weakness of the hero's upcoming attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
