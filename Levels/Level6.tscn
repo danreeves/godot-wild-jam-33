@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/Art/Decor/decor_Fire1_1.png" type="Texture" id=11]
 [ext_resource path="res://assets/Art/Decor/decor_Shrub.png" type="Texture" id=12]
 [ext_resource path="res://assets/Art/Decor/decor_Tree.png" type="Texture" id=13]
+[ext_resource path="res://assets/Art/Decor/decor_Beer2.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
@@ -44,18 +45,28 @@ position = Vector2( 1392.05, -130.941 )
 
 [node name="AnimatedSprite" parent="Enemy3" instance=ExtResource( 9 )]
 
+[node name="Enemy5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1255.7, 147.744 )
+
+[node name="AnimatedSprite" parent="Enemy5" instance=ExtResource( 9 )]
+
 [node name="Enemy4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1555.37, -79.9989 )
 
 [node name="AnimatedSprite" parent="Enemy4" instance=ExtResource( 9 )]
 
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2440.93, 130.108 )
+position = Vector2( 2912.7, -144.503 )
 
 [node name="AnimatedSprite" parent="Enemy" instance=ExtResource( 3 )]
 
+[node name="Enemy6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2638.7, -147.503 )
+
+[node name="AnimatedSprite" parent="Enemy6" instance=ExtResource( 3 )]
+
 [node name="Campfire" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2703.06, 31.4468 )
+position = Vector2( 4089.75, -137.751 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -166,3 +177,52 @@ texture = ExtResource( 12 )
 position = Vector2( 1487.44, -140.486 )
 scale = Vector2( -0.560976, 0.526316 )
 texture = ExtResource( 11 )
+
+[node name="decor_Fire1_2" type="Sprite" parent="."]
+position = Vector2( 1333.11, 165.168 )
+scale = Vector2( 0.468355, 0.568628 )
+texture = ExtResource( 11 )
+
+[node name="decor_Beer2" type="Sprite" parent="."]
+position = Vector2( 2767.08, -134.945 )
+texture = ExtResource( 14 )
+
+[node name="decor_Shrub15" type="Sprite" parent="."]
+position = Vector2( 2669, 52 )
+scale = Vector2( 0.483333, 1.04348 )
+texture = ExtResource( 12 )
+
+[node name="decor_Shrub16" type="Sprite" parent="."]
+position = Vector2( 2360, -208 )
+scale = Vector2( -0.242424, 0.595745 )
+texture = ExtResource( 12 )
+
+[node name="decor_Shrub17" type="Sprite" parent="."]
+position = Vector2( 2998, 7 )
+scale = Vector2( -0.276923, 1.02933 )
+texture = ExtResource( 12 )
+
+[node name="decor_Shrub18" type="Sprite" parent="."]
+position = Vector2( 3194.74, -220.068 )
+scale = Vector2( -1.51852, 0.770974 )
+texture = ExtResource( 12 )
+
+[node name="decor_Shrub19" type="Sprite" parent="."]
+position = Vector2( 3315.49, -227.667 )
+scale = Vector2( 0.565084, 1.14039 )
+texture = ExtResource( 12 )
+
+[node name="decor_Shrub20" type="Sprite" parent="."]
+position = Vector2( 3783, 86.6691 )
+scale = Vector2( 1.92579, 0.578563 )
+texture = ExtResource( 12 )
+
+[node name="decor_Beer3" type="Sprite" parent="."]
+position = Vector2( 4463.85, 145.599 )
+scale = Vector2( 0.816015, 0.309185 )
+texture = ExtResource( 14 )
+
+[node name="decor_Shrub21" type="Sprite" parent="."]
+position = Vector2( 4440.95, -173.72 )
+scale = Vector2( -1, 0.529412 )
+texture = ExtResource( 12 )
