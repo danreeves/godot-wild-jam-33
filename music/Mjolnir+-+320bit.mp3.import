@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Mjolnir+-+320bit.mp3-bd6e662a554053132341374b61ed3ff4.mp3str"
+
+[deps]
+
+source_file="res://music/Mjolnir+-+320bit.mp3"
+dest_files=[ "res://.import/Mjolnir+-+320bit.mp3-bd6e662a554053132341374b61ed3ff4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
