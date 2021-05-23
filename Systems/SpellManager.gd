@@ -14,6 +14,7 @@ var spells = [
 	Blind.new(),
 	Slow.new(),
 	Haste.new(),
+	Fear.new(),
 ]
 var active_spell = null
 
