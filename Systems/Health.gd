@@ -37,6 +37,7 @@ func add_heal(num: int) -> void:
 	damage_number.heal = true
 	add_child(damage_number)
 	health = health + num
+	$AudioStreamPlayer.play()
 
 func die() -> void:
 	get_parent().die()

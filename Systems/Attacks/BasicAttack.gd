@@ -4,7 +4,7 @@ var Elements = Globals.Elements
 export(Texture) var sprite = null
 export var base_damage: int = 40
 export(Globals.Elements) var element = Elements.None
-export(Array) var valid_targets = []
+export(AudioStream) var audio = null
 
 var multiplier_lookup = [
 	[Elements.Fire, Elements.Water, 0.5],
@@ -24,6 +24,8 @@ var multiplier_lookup = [
 func _ready() -> void:
 	$Sprite.visible = false
 	$Sprite.texture = sprite
+	if audio:
+		$AudioStreamPlayer.stream = audio
 	
 func telegraph() -> void:
 	$AnimationPlayer.play("Wiggle")
@@ -61,4 +63,7 @@ func execute(unit: Node, owner: Node) -> void:
 	var health = unit.find_node("Health")
 	if health:
 		health.add_damage(damage)
+		
+	$AudioStreamPlayer.pitch_scale = rand_range(0.9, 1.1)
+	$AudioStreamPlayer.play()
 	done()

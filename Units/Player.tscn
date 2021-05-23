@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/Animation/Hero_Animation.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Units/Player.gd" type="Script" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://assets/UI/Haste.png" type="Texture" id=14]
 [ext_resource path="res://assets/UI/Slow.png" type="Texture" id=15]
 [ext_resource path="res://assets/UI/Blind.png" type="Texture" id=16]
+[ext_resource path="res://soundeffects/water-spell.wav" type="AudioStream" id=17]
+[ext_resource path="res://soundeffects/fireball.wav" type="AudioStream" id=18]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.0
@@ -55,11 +57,13 @@ wait_time = 2.0
 position = Vector2( 2, 0.5 )
 sprite = ExtResource( 7 )
 element = 1
+audio = ExtResource( 18 )
 
 [node name="WaterAttack" parent="AttackQueue" instance=ExtResource( 3 )]
 position = Vector2( 2, 0 )
 sprite = ExtResource( 6 )
 element = 3
+audio = ExtResource( 17 )
 
 [node name="GrassAttack" parent="AttackQueue" instance=ExtResource( 3 )]
 position = Vector2( 2, 0 )

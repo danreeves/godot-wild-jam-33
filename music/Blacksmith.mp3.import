@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Blacksmith.mp3-2b43a6fb89e6c9454977b399c7383747.mp3str"
+
+[deps]
+
+source_file="res://music/Blacksmith.mp3"
+dest_files=[ "res://.import/Blacksmith.mp3-2b43a6fb89e6c9454977b399c7383747.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
