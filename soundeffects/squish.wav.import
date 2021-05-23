@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/squish.wav-6a858c199fc79ce93b755d7ca11c65cb.sample"
+
+[deps]
+
+source_file="res://soundeffects/squish.wav"
+dest_files=[ "res://.import/squish.wav-6a858c199fc79ce93b755d7ca11c65cb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

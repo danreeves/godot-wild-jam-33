@@ -13,8 +13,8 @@ func animation_finished():
 	animation = $AnimatedSprite1.animation
 	emit_signal("animation_finished")
 	
-func play(animation: String):
-	animation = animation
+func play(anim: String):
+	animation = anim
 	for child in get_children():
 		if child is AnimatedSprite:
 			child.play(animation)
@@ -24,7 +24,7 @@ func stop():
 		if child is AnimatedSprite:
 			child.stop()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	for child in get_children():
 		if child is AnimatedSprite:
 			child.flip_h = flip_h

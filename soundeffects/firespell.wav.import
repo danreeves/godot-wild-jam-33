@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/firespell.wav-f1c60fee614465f96fe7ae96e385b409.sample"
+
+[deps]
+
+source_file="res://soundeffects/firespell.wav"
+dest_files=[ "res://.import/firespell.wav-f1c60fee614465f96fe7ae96e385b409.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

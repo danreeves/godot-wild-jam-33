@@ -6,7 +6,9 @@ func _ready() -> void:
 
 func restart():
 	visible = false
-	get_tree().reload_current_scene()
+	var err = get_tree().reload_current_scene()
+	if err:
+		print(err)
 	get_tree().paused = false
 
 func quit():

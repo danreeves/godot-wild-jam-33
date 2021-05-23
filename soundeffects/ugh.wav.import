@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ugh.wav-6d8ebdcb76010c144b9dcdfae6be28da.sample"
+
+[deps]
+
+source_file="res://soundeffects/ugh.wav"
+dest_files=[ "res://.import/ugh.wav-6d8ebdcb76010c144b9dcdfae6be28da.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
