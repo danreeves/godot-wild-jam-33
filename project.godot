@@ -76,6 +76,7 @@ config/icon="res://app-icon.png"
 [autoload]
 
 Globals="*res://Globals.gd"
+SpellStore="*res://SpellStore.gd"
 
 [display]
 

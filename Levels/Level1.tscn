@@ -20,28 +20,15 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends \"res://Levels/Level.gd\"
 
-
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
-
-
 func _on_Area2D_body_entered(body: Node) -> void:
 	if body == find_node(\"Player\"):
 		var spell_manager = body.find_node(\"SpellManager\")
 		spell_manager.add_spell(ToFire.new())
 		spell_manager.add_spell(ToWater.new())
 		spell_manager.add_spell(ToGrass.new())
+		SpellStore.purchase(ToFire)
+		SpellStore.purchase(ToWater)
+		SpellStore.purchase(ToGrass)
 "
 
 [sub_resource type="RectangleShape2D" id=2]

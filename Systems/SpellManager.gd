@@ -7,21 +7,14 @@ export (int) var max_mana = 100
 export (int) var mana = max_mana
 
 var spells = [
-	Heal.new(),
-#	ToGrass.new(),
-#	ToFire.new(),
-#	ToWater.new(),
-#	Blind.new(),
-#	Slow.new(),
-#	Haste.new(),
-#	Fear.new(),
 ]
 var active_spell = null
 
 onready var HUD = get_parent().find_node("HUD")
 
 func add_spell(spell):
-	spells.append(spell)
+	if !spells.has(spell):
+		spells.append(spell)
 	var spells_container: HBoxContainer = HUD.find_node("Spells")
 	var button = AbilityButton.instance()
 	button._texture = spell.texture
@@ -33,9 +26,8 @@ func add_spell(spell):
 	
 func _ready() -> void:
 	var _err1 = $Timer.connect("timeout", self, "tick")
-	var spells_container: HBoxContainer = HUD.find_node("Spells")
-	for spell in spells:
-		add_spell(spell)
+	for spell in SpellStore.purchased:
+		add_spell(spell.new())
 		
 func spell_primed(spell_name):
 	for spell in spells:
