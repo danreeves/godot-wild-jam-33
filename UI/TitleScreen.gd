@@ -1,7 +1,6 @@
 extends Control
 
 func _ready() -> void:
-	print("onready")
 	var _err1 = find_node("TitleButtonPlay").connect("button_up", self, "play")
 	var _err2 = find_node("TitleButtonQuit").connect("button_up", self, "quit")
 	

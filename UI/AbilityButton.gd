@@ -13,6 +13,7 @@ func _ready() -> void:
 	texture = _texture
 	$Label.text = label
 	$Cooldown.wait_time = cooldown
+	$HoverSound.pitch_scale = rand_range(0.9, 1.2)
 	var _err1 = connect("mouse_entered", self, "mouse_entered")
 	var _err2 = connect("mouse_exited", self, "mouse_exited")
 	var _err3 = connect("gui_input", self, "gui_input")
@@ -31,6 +32,7 @@ func _process(_delta: float) -> void:
 
 func mouse_entered() -> void:
 	hovered = true
+	$HoverSound.play()
 	
 func mouse_exited() -> void:
 	hovered = false
@@ -40,7 +42,11 @@ func gui_input(event: InputEvent) -> void:
 		if event.pressed and event.button_index == 1:
 			if $Cooldown.is_stopped():
 				select()
+				$ClickSound.play()
 				emit_signal("clicked", label)
+			else:
+				$ErrorSound.pitch_scale = 1 - $Cooldown.time_left
+				$ErrorSound.play()
 			
 func used():
 	$Cooldown.start()

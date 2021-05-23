@@ -1,12 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Units/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Systems/AttackQueue.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Systems/Attacks/BasicAttack.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/UI/Blind.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/Slow.png" type="Texture" id=3]
 [ext_resource path="res://Systems/Health.tscn" type="PackedScene" id=5]
-[ext_resource path="res://attack.png" type="Texture" id=6]
-[ext_resource path="res://running.png" type="Texture" id=7]
-[ext_resource path="res://Systems/Attacks/RunAway.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.0
@@ -33,20 +30,36 @@ shape = SubResource( 2 )
 [node name="Health" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, 45.241 )
 
-[node name="AttackQueue" parent="." instance=ExtResource( 3 )]
-position = Vector2( -1.5874, -46.8284 )
-wait_time = 2.1
-
-[node name="BasicAttack" parent="AttackQueue" instance=ExtResource( 4 )]
-sprite = ExtResource( 6 )
-base_damage = 20
-
-[node name="RunAway" parent="AttackQueue" instance=ExtResource( 8 )]
-sprite = ExtResource( 7 )
-
 [node name="ClickArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
 shape = SubResource( 3 )
 
 [node name="ColorTween" type="Tween" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = 10
+
+[node name="Debuffs" type="HBoxContainer" parent="Node2D"]
+margin_left = -32.2136
+margin_top = -85.0289
+margin_right = 91.7864
+margin_bottom = -25.0289
+rect_scale = Vector2( 0.5, 0.5 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blind" type="TextureRect" parent="Node2D/Debuffs"]
+margin_left = 32.0
+margin_right = 92.0
+margin_bottom = 60.0
+texture = ExtResource( 2 )
+
+[node name="Slow" type="TextureRect" parent="Node2D/Debuffs"]
+visible = false
+margin_left = 32.0
+margin_right = 92.0
+margin_bottom = 60.0
+texture = ExtResource( 3 )

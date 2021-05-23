@@ -11,6 +11,8 @@ var spells = [
 	ToGrass.new(),
 	ToFire.new(),
 	ToWater.new(),
+	Blind.new(),
+	Slow.new(),
 ]
 var active_spell = null
 
@@ -22,14 +24,15 @@ func _ready() -> void:
 	for spell in spells:
 		var button = AbilityButton.instance()
 		button._texture = spell.texture
-		button.label = spell.name
+		button.label = spell.spell_name
 		button.cooldown = spell.cooldown
+		button.add_child(spell)
 		spells_container.add_child(button)
 		button.connect("clicked", self, "spell_primed")
 		
 func spell_primed(spell_name):
 	for spell in spells:
-		if spell.name == spell_name:
+		if spell.spell_name == spell_name:
 			active_spell = spell
 			
 	if active_spell.mana_cost > mana:
@@ -38,7 +41,7 @@ func spell_primed(spell_name):
 	for button in HUD.find_node("Spells").get_children():
 		var name = ""
 		if active_spell:
-			name = active_spell.name
+			name = active_spell.spell_name
 		if name == "" or button.label != name:
 			button.deselect()
 			
@@ -73,10 +76,10 @@ func cast(target):
 		mana = max(0, mana - active_spell.mana_cost)
 		
 		for button in HUD.find_node("Spells").get_children():
-			if button.label == active_spell.name:
+			if button.label == active_spell.spell_name:
 				button.used()
 	else:
-		print(active_spell.name + "HAS NO CAST METHOD")
+		print(active_spell.spell_name + "HAS NO CAST METHOD")
 		
 	active_spell = null
 	for button in HUD.find_node("Spells").get_children():

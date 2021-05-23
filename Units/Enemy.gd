@@ -4,16 +4,33 @@ export(Globals.Elements) var element = Globals.Elements.None
 export var speed = 100
 export var move_to_player = false
 export var move_away_from_player = false
+export var health = 100
+export var wait_time: float = 3 setget set_wait_time
+export var cooldown: float = 0.2
+export var blind = false
+export var slowed = false
 
 onready var spell_manager = get_target().find_node("SpellManager")
 
 export var dead = false
+
+var target_in_range = false
 
 func _ready() -> void:
 	var _err1 = $InCombat.connect("body_entered", self, "unit_enter_range")
 	var _err2 = $InCombat.connect("body_exited", self, "unit_leave_range")
 	var _err3 = $AnimatedSprite.connect("animation_finished", self, "animation_finished")
 	var _err4 = $ClickArea.connect("input_event", self, "input_event")
+	$Health.set_max_health(health)
+	
+	if not find_node("AttackQueue"):
+		print("AttackQueue missing in ", self)
+		var AttackQueue = load("res://Systems/AttackQueue.tscn")
+		var attack_queue = AttackQueue.instance()
+		add_child(attack_queue)
+	
+	$AttackQueue.wait_time = wait_time
+	$AttackQueue.cooldown = cooldown
 	move_child($AnimatedSprite, 1)
 	set_element(element)
 	$AnimatedSprite.play("idle")
@@ -28,11 +45,14 @@ func unit_enter_range(unit: Node2D) -> void:
 	if unit == get_target():
 		move_to_player = false
 		if !dead:
+			target_in_range = true
 			$AttackQueue.start_timer()
 
 func unit_leave_range(unit: Node2D) -> void:
 	if unit == get_target():
-		$AttackQueue.stop()
+		target_in_range = false
+		if $AttackQueue.is_running:
+			$AttackQueue.stop()
 
 func die() -> void:
 	dead = true
@@ -47,6 +67,10 @@ func is_element(elem) -> bool:
 	return element == elem
 
 func _process(_delta: float) -> void:
+	
+	find_node("Blind").visible = !dead and blind
+	find_node("Slow").visible = !dead and slowed
+	
 	if dead: 
 		return
 	
@@ -54,8 +78,11 @@ func _process(_delta: float) -> void:
 	var size = 1 + position.y * 0.002
 	scale = Vector2(size, size)
 	
-	if get_target().dead:
+	if get_target().dead and $AttackQueue.is_running:
 		$AttackQueue.stop()
+		
+	if !$AttackQueue.is_running and !get_target().dead and target_in_range:
+		$AttackQueue.start_timer()
 
 func _physics_process(_delta: float) -> void:
 	if dead:
@@ -113,3 +140,8 @@ func set_element(ele):
 		Tween.TRANS_LINEAR
 	)
 	$ColorTween.start()
+
+func set_wait_time(new_wait_time):
+	wait_time = new_wait_time
+	if find_node("AttackQueue"):
+		$AttackQueue.wait_time = new_wait_time

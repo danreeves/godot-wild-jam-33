@@ -8,6 +8,11 @@ var max_health = health
 func _ready() -> void:
 	max_health = health
 	$HealthBar.visible = false
+	
+func set_max_health(new_health):
+	if health == max_health:
+		health = new_health
+	max_health = new_health
 
 func add_damage(num: int) -> void:
 	var damage_number = DamageNumber.instance()

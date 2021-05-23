@@ -21,11 +21,13 @@ func _process(_delta: float) -> void:
 		get_tree().paused = true
 	
 	if dead:
-		$AttackQueue.stop()
+		if $AttackQueue.is_running:
+			$AttackQueue.stop()
 		return
 		
 	if $AnimatedSprite.animation == "camp":
-		$AttackQueue.stop()
+		if $AttackQueue.is_running:
+			$AttackQueue.stop()
 		return
 		
 	var target = get_nearest_enemy()
@@ -35,7 +37,8 @@ func _process(_delta: float) -> void:
 		unit_in_range_last_frame = true
 		
 	if !is_in_range(target):
-		$AttackQueue.stop()
+		if $AttackQueue.is_running:
+			$AttackQueue.stop()
 		unit_in_range_last_frame = false
 	
 	if !get_nearest_enemy():
@@ -50,7 +53,8 @@ func _physics_process(_delta: float) -> void:
 		return
 	
 	if $AnimatedSprite.animation == "camp":
-		$AttackQueue.stop()
+		if $AttackQueue.is_running:
+			$AttackQueue.stop()
 		return
 		
 	for anim in Globals.attack_anims:

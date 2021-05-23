@@ -24,7 +24,7 @@ var multiplier_lookup = [
 func _ready() -> void:
 	$Sprite.visible = false
 	$Sprite.texture = sprite
-
+	
 func telegraph() -> void:
 	$AnimationPlayer.play("Wiggle")
 	$Sprite.visible = true
@@ -41,7 +41,7 @@ func can_target_unit(unit) -> bool:
 		return true
 	return false
 
-func execute(unit: Node, _owner: Node) -> void:
+func execute(unit: Node, owner: Node) -> void:
 	var damage = base_damage
 	var unit_element = Globals.Elements.None
 	if "element" in unit:
@@ -54,6 +54,9 @@ func execute(unit: Node, _owner: Node) -> void:
 				multiplier = lookup.back()
 	
 	damage = base_damage * multiplier
+	
+	if "blind" in owner and owner.blind:
+		damage = 0 
 	
 	var health = unit.find_node("Health")
 	if health:

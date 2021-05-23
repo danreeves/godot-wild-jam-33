@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://bobbus-bg.png" type="Texture" id=2]
@@ -10,6 +10,11 @@
 [ext_resource path="res://Levels/Level3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Units/DonkAnimatedSprite.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Props/StartBarrier.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Systems/Attacks/BasicAttack.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Systems/AttackQueue.tscn" type="PackedScene" id=12]
+[ext_resource path="res://attack.png" type="Texture" id=13]
+[ext_resource path="res://running.png" type="Texture" id=14]
+[ext_resource path="res://Systems/Attacks/RunAway.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9999, 10 )
@@ -35,12 +40,37 @@ __meta__ = {
 
 [node name="Enemy2" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 193, -2.19452 )
+wait_time = 0.5
+cooldown = 0.5
 
 [node name="AnimatedSprite" parent="YSort/Enemy2" instance=ExtResource( 9 )]
+
+[node name="AttackQueue" parent="YSort/Enemy2" instance=ExtResource( 12 )]
+position = Vector2( -1.5874, -46.8284 )
+wait_time = 2.1
+
+[node name="BasicAttack" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 11 )]
+sprite = ExtResource( 13 )
+base_damage = 5
+
+[node name="BasicAttack2" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 11 )]
+sprite = ExtResource( 13 )
+base_damage = 5
+
+[node name="RunAway" parent="YSort/Enemy2/AttackQueue" instance=ExtResource( 15 )]
+sprite = ExtResource( 14 )
 
 [node name="Enemy" parent="YSort" instance=ExtResource( 5 )]
 
 [node name="AnimatedSprite" parent="YSort/Enemy" instance=ExtResource( 3 )]
+
+[node name="AttackQueue" parent="YSort/Enemy" instance=ExtResource( 12 )]
+position = Vector2( -1.5874, -46.8284 )
+wait_time = 2.1
+
+[node name="BasicAttack" parent="YSort/Enemy/AttackQueue" instance=ExtResource( 11 )]
+sprite = ExtResource( 13 )
+base_damage = 20
 
 [node name="Campfire" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 437.492, -10.9797 )

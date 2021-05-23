@@ -1,12 +1,24 @@
 extends Node2D
 
 var is_running = false
-export var wait_time: float = 3
-export var cooldown: float = 0.2
+export var wait_time: float = 3 setget set_wait_time
+export var cooldown: float = 0.2 setget set_cooldown
 
 var attacks = []
 var current_attack = null
 var queued_stop_after_duration = false
+var queued_update_wait_time = null
+
+func set_wait_time(new_wait_time):
+	wait_time = new_wait_time
+	if $Timer.is_stopped():
+		$Timer.wait_time = new_wait_time
+	else:
+		queued_update_wait_time = new_wait_time
+	
+func set_cooldown(new_cooldown):
+	cooldown = new_cooldown
+	$Cooldown.wait_time = new_cooldown
 
 func _ready() -> void:
 	var children = get_children()
@@ -29,17 +41,21 @@ func _process(_delta: float) -> void:
 	
 	if not $Timer.is_stopped():
 		var progress = ($Timer.wait_time - $Timer.time_left) / $Timer.wait_time
-		$Progress.scale.x = progress
+		$Progress.scale.x = max(0, progress)
 	else:
 		$Progress.scale.x = 0		
 
 func stop() -> void:
+	if !is_running:
+		return
 	if !$Duration.is_stopped() and $Duration.time_left > 0:
 		queued_stop_after_duration = true
 		return
 	$Timer.stop()
 	if current_attack and current_attack.has_method("done"):
 		current_attack.done()
+	elif current_attack:
+		print("@@ HAS NO DONE ", current_attack)
 	current_attack = null
 	is_running = false
 
@@ -74,6 +90,10 @@ func on_cooldown_end() -> void:
 	start_timer()
 
 func on_timer_end() -> void:
+	if queued_update_wait_time:
+		$Timer.wait_time = queued_update_wait_time
+		queued_update_wait_time = null
+	
 	if current_attack.has_method("execute"):
 		var target = get_parent().get_target()
 		if target:

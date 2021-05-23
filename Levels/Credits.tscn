@@ -4,20 +4,16 @@
 [ext_resource path="res://PixelatedPusab.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://UI/Button.tscn" type="PackedScene" id=3]
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
 func _on_Quit_button_up() -> void:
 	get_tree().quit()
 "
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 40
 use_filter = true
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 20
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -25,19 +21,23 @@ size = 20
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 19
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=5]
 size = 20
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxEmpty" id=6]
+[sub_resource type="DynamicFont" id=5]
+size = 19
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = SubResource( 7 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,7 +71,7 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer"]
 margin_right = 608.0
 margin_bottom = 82.0
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.94902, 0.803922, 0.027451, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 6
@@ -85,7 +85,7 @@ fit_content_height = true
 margin_top = 86.0
 margin_right = 608.0
 margin_bottom = 106.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Helloflower - Executive Art Producer and Architect"
@@ -96,7 +96,7 @@ valign = 1
 margin_top = 110.0
 margin_right = 608.0
 margin_bottom = 130.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Raindish - Senior Coding Specialist and Engineer"
@@ -106,7 +106,7 @@ align = 1
 margin_top = 134.0
 margin_right = 608.0
 margin_bottom = 154.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Monkeycat - Head UI Designer and Audio Technician"
@@ -116,7 +116,7 @@ align = 1
 margin_top = 158.0
 margin_right = 608.0
 margin_bottom = 178.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.94902, 0.803922, 0.027451, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Bobbus - Lead Art Director and Consultant"
@@ -126,67 +126,67 @@ align = 1
 margin_top = 182.0
 margin_right = 608.0
 margin_bottom = 186.0
-custom_styles/separator = SubResource( 6 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="HSeparator2" type="HSeparator" parent="TextureRect/VBoxContainer"]
 margin_top = 190.0
 margin_right = 608.0
 margin_bottom = 194.0
-custom_styles/separator = SubResource( 6 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="HSeparator3" type="HSeparator" parent="TextureRect/VBoxContainer"]
 margin_top = 198.0
 margin_right = 608.0
 margin_bottom = 202.0
-custom_styles/separator = SubResource( 6 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="HSeparator4" type="HSeparator" parent="TextureRect/VBoxContainer"]
 margin_top = 206.0
 margin_right = 608.0
 margin_bottom = 210.0
-custom_styles/separator = SubResource( 6 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="HSeparator5" type="HSeparator" parent="TextureRect/VBoxContainer"]
 margin_top = 214.0
 margin_right = 608.0
 margin_bottom = 218.0
-custom_styles/separator = SubResource( 6 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="HSeparator6" type="HSeparator" parent="TextureRect/VBoxContainer"]
 margin_top = 222.0
 margin_right = 608.0
 margin_bottom = 226.0
-custom_styles/separator = SubResource( 6 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="HSeparator7" type="HSeparator" parent="TextureRect/VBoxContainer"]
 margin_top = 230.0
 margin_right = 608.0
 margin_bottom = 234.0
-custom_styles/separator = SubResource( 6 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="HSeparator8" type="HSeparator" parent="TextureRect/VBoxContainer"]
 margin_top = 238.0
 margin_right = 608.0
 margin_bottom = 242.0
-custom_styles/separator = SubResource( 6 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="HSeparator9" type="HSeparator" parent="TextureRect/VBoxContainer"]
 margin_top = 246.0
 margin_right = 608.0
 margin_bottom = 250.0
-custom_styles/separator = SubResource( 6 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="HSeparator10" type="HSeparator" parent="TextureRect/VBoxContainer"]
 margin_top = 254.0
 margin_right = 608.0
 margin_bottom = 258.0
-custom_styles/separator = SubResource( 6 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="HSeparator11" type="HSeparator" parent="TextureRect/VBoxContainer"]
 margin_top = 262.0
 margin_right = 608.0
 margin_bottom = 266.0
-custom_styles/separator = SubResource( 6 )
+custom_styles/separator = SubResource( 7 )
 
 [node name="Quit" parent="TextureRect/VBoxContainer" instance=ExtResource( 3 )]
 margin_left = 0.0

@@ -1,7 +1,7 @@
-extends Object
+extends Node
 class_name ToGrass
 
-export (String) var name = "Grass"
+export (String) var spell_name = "Grass"
 export (Array) var targetable_groups = ["Enemies"]
 export (Texture) var texture = load("res://assets/UI/ToGrass.png")
 export (int) var mana_cost = 10
